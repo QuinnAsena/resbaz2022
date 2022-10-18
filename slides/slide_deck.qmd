@@ -1,0 +1,144 @@
+---
+title: "Authoring collaborative research projects using Quarto"
+author: "Quinn Asena"
+institute: "UW-Madison"
+date: today
+bibliography: refs.bib
+format:
+  revealjs:
+    backgroundcolor: "#44444c"
+    fontcolor: "white"
+    preview-links: true
+#    incremental: true  
+    highlight-style: github
+    slide-number: c/t
+    width: 1600
+    height: 900
+---
+
+# Nothing to see here
+```{r}
+#| echo: false
+options(tidyverse.quiet=TRUE)
+library(tidyverse)
+```
+
+# Quarto {background-color="#44444c"}
+
+# Quarto {background-color="#36365a"}
+
+
+## Quarto
+
+Why geek out on Quarto?
+
+[This is why](linktoresource)
+
+## Quarto
+
+- [Well documented](https://quarto.org/docs/guide/)
+
+- Uses [markdown syntax](https://quarto.org/docs/authoring/markdown-basics.html)
+
+- Accepts multiple programming languages
+
+- Outputs multiple formats (Word, PDF HTML...)
+
+
+## Elements of a Quarto file
+
+::: {.incremental}
+- YAML
+- Text
+- Code blocks
+- Citation .bib
+- css (optional for style)
+:::
+
+
+## YAML
+
+:::: {.columns}
+::: {.column width="50%"}
+The YAML is a set of `key: value pairs` that are the metadata for your document. such as, author, title, output format, css and citation file.
+
+- YAML is whitespace sensitive
+
+- tab sensitive?
+
+:::
+
+::: {.column width="50%"}
+``` yaml
+---
+title: "My Manuscript"
+format: html
+date: today
+---
+```
+:::
+::::
+
+## YAML
+
+::: callout-tip
+# YAML Exersice
+- Open up the template.qmd and fill the existing YAML fields
+
+- Add a table of contents following the [guide](https://quarto.org/docs/output-formats/html-basics.html)
+:::
+
+
+## Text
+
+- Writing in Quarto uses markdown syntax. 
+
+- LaTeX is used to render PDFs so LaTeX commands can be used for PDF outputs
+
+- Why I like writing in Markdown
+
+Look! I can do fancy maths: $f_{c}=z^{2}+c$
+
+## Code blocks
+
+## Citations
+
+@perkel2022
+
+
+## A slide with a plot {.scrollable}
+
+```{r}
+#| echo: true
+#| fig.retina: 2
+#| fig.height: 9
+#| fig.width: 16
+#| output-location: column
+# ^^ could be fragment, slide, column, column-fragment
+ggplot() +
+  geom_point(
+    data = mtcars,
+    aes(wt, mpg),
+    color = "goldenrod"
+  ) +
+  labs(
+    title = "Some Dots"
+  ) 
+```
+
+## Python
+
+```{.python code-line-numbers="6-8"}
+import numpy as np
+import matplotlib.pyplot as plt
+
+r = np.arange(0, 2, 0.01)
+theta = 2 * np.pi * r
+fig, ax = plt.subplots(subplot_kw={'projection': 'polar'})
+ax.plot(theta, r)
+ax.set_rticks([0.5, 1, 1.5, 2])
+ax.grid(True)
+plt.show()
+```
+
+## References
