@@ -1,0 +1,45 @@
+---
+title: "Your title"
+author: "You et al"
+date: today
+format:
+  html:
+    code-fold: false
+    toc: true
+    link-external-newwindow: true
+theme:
+  light: flatly
+  dark: darkly
+---
+
+
+
+# Plots  {.tabset}
+```{r}
+library(ggplot2)
+library(patchwork)
+gg0 <- list()
+
+p1 <- ggplot(mtcars, aes(mpg, hp)) + geom_point()
+p2 <- ggplot(mtcars, aes(mpg, disp)) + geom_point()
+p3 <- ggplot(mtcars, aes(mpg, drat)) + geom_point()
+
+gg0[[1]] <- p1/p1/p1/p1
+gg0[[2]] <- p1/p1/p1/p1/p1/p1
+gg0[[3]] <- p1/p1/p1/p1/p1/p1/p1/p1/p1
+
+headings <- c('hp','disp','drat')
+```
+
+#### Heading
+
+::: {.panel-tabset}
+```{r, results='asis', echo = FALSE}
+for (i in 1:length(gg0)) {
+  cat("##### ",headings[i],"\n")
+  print(gg0[[i]])
+  cat('\n\n')
+}
+```
+
+:::

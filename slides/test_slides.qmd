@@ -1,0 +1,24 @@
+---
+title: "Test Slides"
+author: "M"
+format: revealjs
+---
+
+# Column section
+
+:::: {.columns}
+
+::: {.column width="40%"}
+Left column
+
+- Bullet
+
+- Bullet
+
+:::
+
+::: {.column width="60%"}
+Right column
+:::
+
+::::
