@@ -1,6 +1,6 @@
 ---
-title: "Your title"
-author: "You et al"
+title: "Example"
+author: "Quinn Asena"
 date: today
 format:
   html:

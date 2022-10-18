@@ -14,25 +14,18 @@ format:
     slide-number: c/t
     width: 1600
     height: 900
+title-slide-attributes:
+  data-background-color: "#36365a"
+
 ---
 
-# Nothing to see here
-```{r}
-#| echo: false
-options(tidyverse.quiet=TRUE)
-library(tidyverse)
-```
-
-# Quarto {background-color="#44444c"}
-
-# Quarto {background-color="#36365a"}
-
+# Quarto for collaborative research
 
 ## Quarto
 
 Why geek out on Quarto?
 
-[This is why](linktoresource)
+- [This is why!](https://quinnasena.github.io/resbaz2022/template_complete.html)
 
 ## Quarto
 
@@ -44,6 +37,11 @@ Why geek out on Quarto?
 
 - Outputs multiple formats (Word, PDF HTML...)
 
+- Version control
+
+## First things first
+
+Clone the reop
 
 ## Elements of a Quarto file
 
@@ -99,12 +97,69 @@ date: today
 
 Look! I can do fancy maths: $f_{c}=z^{2}+c$
 
-## Code blocks
-
 ## Citations
 
 @perkel2022
 
+## Code blocks
+
+## Tabsets {.scrollable}
+
+::: panel-tabset
+# Code
+```{r tabsetPlot}
+#| echo: true
+
+library(palmerpenguins)
+library(ggplot2)
+# From: https://allisonhorst.github.io/palmerpenguins/articles/examples.html
+mass_flipper <- ggplot(data = penguins,
+                       aes(x = flipper_length_mm,
+                           y = body_mass_g)) +
+  geom_point(aes(color = species,
+                 shape = species),
+             size = 3,
+             alpha = 0.8) +
+  scale_color_manual(values = c("darkorange","purple","cyan4")) +
+  labs(x = "Flipper length (mm)",
+       y = "Body mass (g)",
+       color = "Penguin species",
+       shape = "Penguin species") +
+  theme_minimal() +
+  theme(legend.position = c(0.2, 0.7),
+        plot.title.position = "plot",
+)
+```
+# Data
+```{r}
+rmarkdown::paged_table(penguins[1:50,])
+```
+# Plot
+```{r}
+#| warning: false
+#| fig-cap: Flipper length and body mass for Adelie, Chinstrap and Gentoo Penguins
+#| fig-alt: Plot of penguin bill length against body mass by species
+
+mass_flipper
+```
+:::
+
+## Tabset code
+
+tabsets are input using:
+
+```quarto
+::: panel-tabset
+# Tab 1
+
+# Tab 2
+
+:::
+
+```
+
+
+## Images
 
 ## A slide with a plot {.scrollable}
 

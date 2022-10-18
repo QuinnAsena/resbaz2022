@@ -4,21 +4,29 @@ author: "M"
 format: revealjs
 ---
 
-# Column section
+# 1
 
-:::: {.columns}
+## 2
 
-::: {.column width="40%"}
-Left column
+## tabset
 
-- Bullet
+::: panel-tabset
+# Code
 
-- Bullet
+# Result
 
 :::
 
-::: {.column width="60%"}
-Right column
+## tabsetws
+
+tabsets are input using:
+
+```quarto
+::: panel-tabset
+# Tab 1
+
+# Tab 2
+
 :::
 
-::::
+```
