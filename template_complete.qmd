@@ -6,7 +6,7 @@ author:
 date: today
 format:
   html:
-    code-fold: false
+    code-fold: true
     toc: true
     link-external-newwindow: true
 theme:
