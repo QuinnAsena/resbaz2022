@@ -1,6 +1,8 @@
 ---
 title: "Example"
-author: "Quinn Asena"
+author:
+  name: "Quinn Asena"
+  affiliation: "UW-Madison (Formaly University of Auckland)"
 date: today
 format:
   html:

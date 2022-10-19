@@ -4,30 +4,32 @@ author: "Quinn Asena"
 institute: "UW-Madison"
 date: today
 bibliography: refs.bib
+from: markdown+emoji
 format:
   revealjs:
-    backgroundcolor: "#44444c"
-    fontcolor: "white"
+    theme: dark
+#    backgroundcolor: "#44444c"
+#    fontcolor: "white"
     preview-links: true
-#    incremental: true  
     highlight-style: github
     slide-number: c/t
     width: 1600
     height: 900
 title-slide-attributes:
   data-background-color: "#36365a"
-
 ---
 
 # Quarto for collaborative research
 
-## Quarto
-
-Why geek out on Quarto?
+## why geek out on Quarto?
 
 - [This is why!](https://quinnasena.github.io/resbaz2022/template_complete.html)
 
-## Quarto
+- [and this](https://www.apreshill.com/blog/2022-04-we-dont-talk-about-quarto/)
+
+- [But is it taking over?](https://yihui.org/en/2022/04/quarto-r-markdown/)
+
+## why I like Quarto
 
 - [Well documented](https://quarto.org/docs/guide/)
 
@@ -37,36 +39,96 @@ Why geek out on Quarto?
 
 - Outputs multiple formats (Word, PDF HTML...)
 
-- Version control
+- Easy to learn and transfer skills from other languages
+
+
+## another thing to learn?
+::::{.columns}
+:::{.column width="40%"}
+- R Markdown and Jupyter also support multiple languages too...
+
+- You decide ʕ•́ᴥ•̀ʔっ
+:::
+
+:::{.column width="60%"}
+![XKCD nails it again!](./images/standards_2x.png)
+:::
+::::
+
+## why collaborate via Quarto and Git?
+
+- Version control your projects
+
+- reproducibility: whole workflow from data to results in one place
+
+- Host a live link consistent with current results (no more copy paste 7 plots into a word doc each time you change something!)
+
+- Coding colaborators can contribute via a Git workflow
+
+- Communicate results to non-coding collaborators
+
+# Buckle up, ready your coding fingers!
+
+## Today's goals
+
+- Publish an example link on GitHub
+
+- Have a working template you can use in the future
+
+- Pointers to handy resources in the slides
+
+## Zoom
+
+- Camera optional, but we love to see you (really, it helps me a lot!)
+
+- During exercises give me a :heavy_check_mark: when you are done or a :hand: if you need help
+
+- Drop questions in the Zoom chat or raise a hand at any time
+
+- We support inclusivity and a positive environment through the Code of Conduct
 
 ## First things first
 
-Clone the reop
+- Open up VS Code and navigate to the source control
+  - Clone the repo: https://github.com/QuinnAsena/resbaz2022.git
+
+- Publish repo to your own GitHub account
+
+- Open up the template.qmd file
+
+:::{.callout-note}
+We are using VS Code, R, and GitHub. If you have a preferred workflow like RStudio, Python, or GitKraken you can use them but may be harder to follow the session content. Afterall, Quarto is supposed to be flexible!
+:::
 
 ## Elements of a Quarto file
 
-::: {.incremental}
+:::{.incremental}
 - YAML
-- Text
-- Code blocks
-- Citation .bib
-- css (optional for style)
-:::
 
+- Text
+
+- Code blocks
+
+- References file
+
+- scss (optional for style; won't cover this!)
+:::
 
 ## YAML
 
-:::: {.columns}
-::: {.column width="50%"}
-The YAML is a set of `key: value pairs` that are the metadata for your document. such as, author, title, output format, css and citation file.
+Your Turn :computer: :
+
+::::{.columns}
+:::{.column width="50%"}
+The YAML is a set of `key: value pairs` that are the metadata for your document, such as, author, title, output format, and citation file.
 
 - YAML is whitespace sensitive
 
-- tab sensitive?
+- Indent sensitive?
 
 :::
 
-::: {.column width="50%"}
+:::{.column width="50%"}
 ``` yaml
 ---
 title: "My Manuscript"
@@ -79,29 +141,83 @@ date: today
 
 ## YAML
 
-::: callout-tip
+:::{.callout-tip}
 # YAML Exersice
-- Open up the template.qmd and fill the existing YAML fields
+- Open up the template.qmd and fill the `title: "Your title"` and `author: "You et al"` fields
+
+  - A couple of handy entries are already completed
+
+  - The existing field: `date: today` will generate today's date (cool huh?  ͡▀̿ ̿ ͜ʖ ͡▀̿ ̿ )
+
 
 - Add a table of contents following the [guide](https://quarto.org/docs/output-formats/html-basics.html)
-:::
 
+- Give me a :heavy_check_mark: when done or a :hand: if you need help
+
+:::
 
 ## Text
 
-- Writing in Quarto uses markdown syntax. 
+- Writing in Quarto uses [markdown syntax](https://quarto.org/docs/authoring/markdown-basics.html) 
 
 - LaTeX is used to render PDFs so LaTeX commands can be used for PDF outputs
 
-- Why I like writing in Markdown
+- Look! I can do fancy maths: $f_{c}=z^{2}+c$  ͡▀̿ ̿ ͜ʖ ͡▀̿ ̿ 
 
-Look! I can do fancy maths: $f_{c}=z^{2}+c$
+:::{.callout-note}
+# Pro tip!
+Render regularly. Small errors can be tricky to pick out long after they have been made.
+:::
 
 ## Citations
 
-@perkel2022
+Citations require:
+
+- a `.bib` or `.bibtex` file in your working directory (one is included for today)
+
+  - The references file can be generated (and automatically sync) with Zotero and other reference managers.
+
+- a YAML entry pointing to the file `bibliography: refs.bib` (if the file is named 'refs.bib')
+
+- an optional `CSL` file specifying the format of the bibliography.
+
+  - Useful for authoring articles as `CSL` files are [downloadable for specific journals](https://github.com/citation-style-language/styles)
+
+## Citations
+
+Citing work in-text [follows the `@citekey` format](https://quarto.org/docs/authoring/footnotes-and-citations.html#sec-citations)
+
+- `@perkel2022` = @perkel2022
+
+- `[@chamberlin1897; @perkel2022]` = [@chamberlin1897; @perkel2022]
+
+We won't go deeper into citations for now as we are not authoring an article today. The link above has info for authoring.
+
+## Markdown exercise
+
+:::{.callout-tip}
+# Markdown Exersice
+
+The template has some basic.....
+
+:::
 
 ## Code blocks
+
+Code blocks are inserted like this:
+```{r}
+#| echo: fenced
+#| eval: false
+6*7
+```
+
+Or:
+
+```{python}
+#| echo: fenced
+#| eval: false
+2*21
+```
 
 ## Tabsets {.scrollable}
 
@@ -130,10 +246,12 @@ mass_flipper <- ggplot(data = penguins,
         plot.title.position = "plot",
 )
 ```
+
 # Data
 ```{r}
 rmarkdown::paged_table(penguins[1:50,])
 ```
+
 # Plot
 ```{r}
 #| warning: false
@@ -196,4 +314,11 @@ ax.grid(True)
 plt.show()
 ```
 
+## Other
+
+- .scss (optional for style)
+
+
 ## References
+
+[Biostats](https://biostats-r.github.io/biostats/quarto/) - very useful resource for authoring documents in Quarto. This session draws from their content.

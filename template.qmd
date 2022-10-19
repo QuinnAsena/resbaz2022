@@ -1,17 +1,20 @@
 ---
 title: "Your title"
-author: "You et al"
+author:
+  name: "You et al"
+  affiliation: "From whence you hail"
 date: today
+bibliography: refs.bib
 format:
   html:
     code-fold: false
-    toc: true
     link-external-newwindow: true
 theme:
   light: flatly
   dark: darkly
 ---
 
+# Text in Markdown
 
 
 # Plots  {.tabset}

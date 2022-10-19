@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.0.37">
 
   <meta name="author" content="Quinn Asena">
-  <meta name="dcterms.date" content="2022-10-18">
+  <meta name="dcterms.date" content="2022-10-19">
   <title>Authoring collaborative research projects using Quarto</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -409,7 +409,7 @@
   <h1 class="title">Authoring collaborative research projects using Quarto</h1>
   <p class="author">Quinn Asena</p>
   <p class="institute">UW-Madison</p>
-  <p class="date">10/18/22</p>
+  <p class="date">10/19/22</p>
 </section>
 
 <section>
@@ -417,47 +417,119 @@
 <h1>Quarto for collaborative research</h1>
 
 </section>
-<section id="quarto" class="slide level2">
-<h2>Quarto</h2>
-<p>Why geek out on Quarto?</p>
+<section id="why-geek-out-on-quarto" class="slide level2">
+<h2>why geek out on Quarto?</h2>
 <ul>
-<li><a href="https://quinnasena.github.io/resbaz2022/template_complete.html">This is why!</a></li>
+<li><p><a href="https://quinnasena.github.io/resbaz2022/template_complete.html">This is why!</a></p></li>
+<li><p><a href="https://www.apreshill.com/blog/2022-04-we-dont-talk-about-quarto/">and this</a></p></li>
+<li><p><a href="https://yihui.org/en/2022/04/quarto-r-markdown/">But is it taking over?</a></p></li>
 </ul>
 </section>
-<section id="quarto-1" class="slide level2">
-<h2>Quarto</h2>
+<section id="why-i-like-quarto" class="slide level2">
+<h2>why I like Quarto</h2>
 <ul>
 <li><p><a href="https://quarto.org/docs/guide/">Well documented</a></p></li>
 <li><p>Uses <a href="https://quarto.org/docs/authoring/markdown-basics.html">markdown syntax</a></p></li>
 <li><p>Accepts multiple programming languages</p></li>
 <li><p>Outputs multiple formats (Word, PDF HTML…)</p></li>
-<li><p>Version control</p></li>
+<li><p>Easy to learn and transfer skills from other languages</p></li>
+</ul>
+</section>
+<section id="another-thing-to-learn" class="slide level2">
+<h2>another thing to learn?</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<ul>
+<li><p>R Markdown and Jupyter also support multiple languages too…</p></li>
+<li><p>You decide ʕ•́ᴥ•̀ʔっ</p></li>
+</ul>
+</div><div class="column" style="width:60%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="./images/standards_2x.png"></p>
+<p></p><figcaption>XKCD nails it again!</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="why-collaborate-via-quarto-and-git" class="slide level2">
+<h2>why collaborate via Quarto and Git?</h2>
+<ul>
+<li><p>Version control your projects</p></li>
+<li><p>reproducibility: whole workflow from data to results in one place</p></li>
+<li><p>Host a live link consistent with current results (no more copy paste 7 plots into a word doc each time you change something!)</p></li>
+<li><p>Coding colaborators can contribute via a Git workflow</p></li>
+<li><p>Communicate results to non-coding collaborators</p></li>
+</ul>
+</section></section>
+<section>
+<section id="buckle-up-ready-your-coding-fingers" class="title-slide slide level1 center">
+<h1>Buckle up, ready your coding fingers!</h1>
+
+</section>
+<section id="todays-goals" class="slide level2">
+<h2>Today’s goals</h2>
+<ul>
+<li><p>Publish an example link on GitHub</p></li>
+<li><p>Have a working template you can use in the future</p></li>
+<li><p>Pointers to handy resources in the slides</p></li>
+</ul>
+</section>
+<section id="zoom" class="slide level2">
+<h2>Zoom</h2>
+<ul>
+<li><p>Camera optional, but we love to see you (really, it helps me a lot!)</p></li>
+<li><p>During exercises give me a <span class="emoji" data-emoji="heavy_check_mark">✔️</span> when you are done or a <span class="emoji" data-emoji="hand">✋</span> if you need help</p></li>
+<li><p>Drop questions in the Zoom chat or raise a hand at any time</p></li>
+<li><p>We support inclusivity and a positive environment through the Code of Conduct</p></li>
 </ul>
 </section>
 <section id="first-things-first" class="slide level2">
 <h2>First things first</h2>
-<p>Clone the reop</p>
+<ul>
+<li><p>Open up VS Code and navigate to the source control</p>
+<ul>
+<li>Clone the repo: https://github.com/QuinnAsena/resbaz2022.git</li>
+</ul></li>
+<li><p>Publish repo to your own GitHub account</p></li>
+<li><p>Open up the template.qmd file</p></li>
+</ul>
+<div class="callout callout-note callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p>We are using VS Code, R, and GitHub. If you have a preferred workflow like RStudio, Python, or GitKraken you can use them but may be harder to follow the session content. Afterall, Quarto is supposed to be flexible!</p>
+</div>
+</div>
+</div>
 </section>
 <section id="elements-of-a-quarto-file" class="slide level2">
 <h2>Elements of a Quarto file</h2>
 <div>
 <ul>
-<li class="fragment">YAML</li>
-<li class="fragment">Text</li>
-<li class="fragment">Code blocks</li>
-<li class="fragment">Citation .bib</li>
-<li class="fragment">css (optional for style)</li>
+<li class="fragment"><p>YAML</p></li>
+<li class="fragment"><p>Text</p></li>
+<li class="fragment"><p>Code blocks</p></li>
+<li class="fragment"><p>References file</p></li>
+<li class="fragment"><p>scss (optional for style; won’t cover this!)</p></li>
 </ul>
 </div>
 </section>
 <section id="yaml" class="slide level2">
 <h2>YAML</h2>
+<p>Your Turn <span class="emoji" data-emoji="computer">💻</span> :</p>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p>The YAML is a set of <code>key: value pairs</code> that are the metadata for your document. such as, author, title, output format, css and citation file.</p>
+<p>The YAML is a set of <code>key: value pairs</code> that are the metadata for your document, such as, author, title, output format, and citation file.</p>
 <ul>
 <li><p>YAML is whitespace sensitive</p></li>
-<li><p>tab sensitive?</p></li>
+<li><p>Indent sensitive?</p></li>
 </ul>
 </div><div class="column" style="width:50%;">
 <div class="sourceCode" id="cb1"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1"></a><span class="pp">---</span></span>
@@ -480,8 +552,13 @@
 </div>
 <div class="callout-content">
 <ul>
-<li><p>Open up the template.qmd and fill the existing YAML fields</p></li>
+<li><p>Open up the template.qmd and fill the <code>title: "Your title"</code> and <code>author: "You et al"</code> fields</p>
+<ul>
+<li><p>A couple of handy entries are already completed</p></li>
+<li><p>The existing field: <code>date: today</code> will generate today’s date (cool huh? ͡▀̿ ̿ ͜ʖ ͡▀̿ ̿ )</p></li>
+</ul></li>
 <li><p>Add a table of contents following the <a href="https://quarto.org/docs/output-formats/html-basics.html">guide</a></p></li>
+<li><p>Give me a <span class="emoji" data-emoji="heavy_check_mark">✔️</span> when done or a <span class="emoji" data-emoji="hand">✋</span> if you need help</p></li>
 </ul>
 </div>
 </div>
@@ -490,18 +567,80 @@
 <section id="text" class="slide level2">
 <h2>Text</h2>
 <ul>
-<li><p>Writing in Quarto uses markdown syntax.</p></li>
+<li><p>Writing in Quarto uses <a href="https://quarto.org/docs/authoring/markdown-basics.html">markdown syntax</a></p></li>
 <li><p>LaTeX is used to render PDFs so LaTeX commands can be used for PDF outputs</p></li>
-<li><p>Why I like writing in Markdown</p></li>
+<li><p>Look! I can do fancy maths: <span class="math inline">\(f_{c}=z^{2}+c\)</span> ͡▀̿ ̿ ͜ʖ ͡▀̿ ̿</p></li>
 </ul>
-<p>Look! I can do fancy maths: <span class="math inline">\(f_{c}=z^{2}+c\)</span></p>
+<div class="callout callout-note callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Pro tip!</strong></p>
+</div>
+<div class="callout-content">
+<p>Render regularly. Small errors can be tricky to pick out long after they have been made.</p>
+</div>
+</div>
+</div>
 </section>
 <section id="citations" class="slide level2">
 <h2>Citations</h2>
-<p><span class="citation" data-cites="perkel2022">Perkel (<a href="#/ref-perkel2022" role="doc-biblioref" onclick="return false;">2022</a>)</span></p>
+<p>Citations require:</p>
+<ul>
+<li><p>a <code>.bib</code> or <code>.bibtex</code> file in your working directory (one is included for today)</p>
+<ul>
+<li>The references file can be generated (and automatically sync) with Zotero and other reference managers.</li>
+</ul></li>
+<li><p>a YAML entry pointing to the file <code>bibliography: refs.bib</code> (if the file is named ‘refs.bib’)</p></li>
+<li><p>an optional <code>CSL</code> file specifying the format of the bibliography.</p>
+<ul>
+<li>Useful for authoring articles as <code>CSL</code> files are <a href="https://github.com/citation-style-language/styles">downloadable for specific journals</a></li>
+</ul></li>
+</ul>
+</section>
+<section id="citations-1" class="slide level2">
+<h2>Citations</h2>
+<p>Citing work in-text <a href="https://quarto.org/docs/authoring/footnotes-and-citations.html#sec-citations">follows the <code>@citekey</code> format</a></p>
+<ul>
+<li><p><code>@perkel2022</code> = <span class="citation" data-cites="perkel2022">Perkel (<a href="#/ref-perkel2022" role="doc-biblioref" onclick="return false;">2022</a>)</span></p></li>
+<li><p><code>[@chamberlin1897; @perkel2022]</code> = <span class="citation" data-cites="chamberlin1897 perkel2022">(<a href="#/ref-chamberlin1897" role="doc-biblioref" onclick="return false;">Chamberlin 1897</a>; <a href="#/ref-perkel2022" role="doc-biblioref" onclick="return false;">Perkel 2022</a>)</span></p></li>
+</ul>
+<p>We won’t go deeper into citations for now as we are not authoring an article today. The link above has info for authoring.</p>
+</section>
+<section id="markdown-exercise" class="slide level2">
+<h2>Markdown exercise</h2>
+<div class="callout callout-tip callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Markdown Exersice</strong></p>
+</div>
+<div class="callout-content">
+<p>The template has some basic…..</p>
+</div>
+</div>
+</div>
 </section>
 <section id="code-blocks" class="slide level2">
 <h2>Code blocks</h2>
+<p>Code blocks are inserted like this:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1"></a><span class="in">```{r}</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a><span class="co">#| eval: false</span></span>
+<span id="cb2-3"><a href="#cb2-3"></a><span class="dv">6</span><span class="sc">*</span><span class="dv">7</span></span>
+<span id="cb2-4"><a href="#cb2-4"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Or:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1"></a><span class="in">```{python}</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="co">#| eval: false</span></span>
+<span id="cb3-3"><a href="#cb3-3"></a><span class="dv">2</span><span class="op">*</span><span class="dv">21</span></span>
+<span id="cb3-4"><a href="#cb3-4"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 <section id="tabsets" class="slide level2 scrollable">
 <h2>Tabsets</h2>
@@ -510,25 +649,25 @@
 <div class="tab-content">
 <div id="tabset-1-1">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">library</span>(palmerpenguins)</span>
-<span id="cb2-2"><a href="#cb2-2"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb2-3"><a href="#cb2-3"></a><span class="co"># From: https://allisonhorst.github.io/palmerpenguins/articles/examples.html</span></span>
-<span id="cb2-4"><a href="#cb2-4"></a>mass_flipper <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
-<span id="cb2-5"><a href="#cb2-5"></a>                       <span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm,</span>
-<span id="cb2-6"><a href="#cb2-6"></a>                           <span class="at">y =</span> body_mass_g)) <span class="sc">+</span></span>
-<span id="cb2-7"><a href="#cb2-7"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> species,</span>
-<span id="cb2-8"><a href="#cb2-8"></a>                 <span class="at">shape =</span> species),</span>
-<span id="cb2-9"><a href="#cb2-9"></a>             <span class="at">size =</span> <span class="dv">3</span>,</span>
-<span id="cb2-10"><a href="#cb2-10"></a>             <span class="at">alpha =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
-<span id="cb2-11"><a href="#cb2-11"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"darkorange"</span>,<span class="st">"purple"</span>,<span class="st">"cyan4"</span>)) <span class="sc">+</span></span>
-<span id="cb2-12"><a href="#cb2-12"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Flipper length (mm)"</span>,</span>
-<span id="cb2-13"><a href="#cb2-13"></a>       <span class="at">y =</span> <span class="st">"Body mass (g)"</span>,</span>
-<span id="cb2-14"><a href="#cb2-14"></a>       <span class="at">color =</span> <span class="st">"Penguin species"</span>,</span>
-<span id="cb2-15"><a href="#cb2-15"></a>       <span class="at">shape =</span> <span class="st">"Penguin species"</span>) <span class="sc">+</span></span>
-<span id="cb2-16"><a href="#cb2-16"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb2-17"><a href="#cb2-17"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="fu">c</span>(<span class="fl">0.2</span>, <span class="fl">0.7</span>),</span>
-<span id="cb2-18"><a href="#cb2-18"></a>        <span class="at">plot.title.position =</span> <span class="st">"plot"</span>,</span>
-<span id="cb2-19"><a href="#cb2-19"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb4-2"><a href="#cb4-2"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb4-3"><a href="#cb4-3"></a><span class="co"># From: https://allisonhorst.github.io/palmerpenguins/articles/examples.html</span></span>
+<span id="cb4-4"><a href="#cb4-4"></a>mass_flipper <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
+<span id="cb4-5"><a href="#cb4-5"></a>                       <span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm,</span>
+<span id="cb4-6"><a href="#cb4-6"></a>                           <span class="at">y =</span> body_mass_g)) <span class="sc">+</span></span>
+<span id="cb4-7"><a href="#cb4-7"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> species,</span>
+<span id="cb4-8"><a href="#cb4-8"></a>                 <span class="at">shape =</span> species),</span>
+<span id="cb4-9"><a href="#cb4-9"></a>             <span class="at">size =</span> <span class="dv">3</span>,</span>
+<span id="cb4-10"><a href="#cb4-10"></a>             <span class="at">alpha =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
+<span id="cb4-11"><a href="#cb4-11"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"darkorange"</span>,<span class="st">"purple"</span>,<span class="st">"cyan4"</span>)) <span class="sc">+</span></span>
+<span id="cb4-12"><a href="#cb4-12"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Flipper length (mm)"</span>,</span>
+<span id="cb4-13"><a href="#cb4-13"></a>       <span class="at">y =</span> <span class="st">"Body mass (g)"</span>,</span>
+<span id="cb4-14"><a href="#cb4-14"></a>       <span class="at">color =</span> <span class="st">"Penguin species"</span>,</span>
+<span id="cb4-15"><a href="#cb4-15"></a>       <span class="at">shape =</span> <span class="st">"Penguin species"</span>) <span class="sc">+</span></span>
+<span id="cb4-16"><a href="#cb4-16"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb4-17"><a href="#cb4-17"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="fu">c</span>(<span class="fl">0.2</span>, <span class="fl">0.7</span>),</span>
+<span id="cb4-18"><a href="#cb4-18"></a>        <span class="at">plot.title.position =</span> <span class="st">"plot"</span>,</span>
+<span id="cb4-19"><a href="#cb4-19"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div id="tabset-1-2">
@@ -548,7 +687,7 @@
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="slide_deck_files/figure-revealjs/unnamed-chunk-2-1.png" alt="Plot of penguin bill length against body mass by species" width="960"></p>
+<p><img data-src="slide_deck_files/figure-revealjs/unnamed-chunk-4-1.png" alt="Plot of penguin bill length against body mass by species" width="960"></p>
 <p></p><figcaption>Flipper length and body mass for Adelie, Chinstrap and Gentoo Penguins</figcaption><p></p>
 </figure>
 </div>
@@ -561,12 +700,12 @@
 <section id="tabset-code" class="slide level2">
 <h2>Tabset code</h2>
 <p>tabsets are input using:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource quarto number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a href="#cb3-1"></a>::: panel-tabset</span>
-<span id="cb3-2"><a href="#cb3-2"></a># Tab 1</span>
-<span id="cb3-3"><a href="#cb3-3"></a></span>
-<span id="cb3-4"><a href="#cb3-4"></a># Tab 2</span>
-<span id="cb3-5"><a href="#cb3-5"></a></span>
-<span id="cb3-6"><a href="#cb3-6"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource quarto number-lines code-with-copy"><code class="sourceCode"><span id="cb5-1"><a href="#cb5-1"></a>::: panel-tabset</span>
+<span id="cb5-2"><a href="#cb5-2"></a># Tab 1</span>
+<span id="cb5-3"><a href="#cb5-3"></a></span>
+<span id="cb5-4"><a href="#cb5-4"></a># Tab 2</span>
+<span id="cb5-5"><a href="#cb5-5"></a></span>
+<span id="cb5-6"><a href="#cb5-6"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="images" class="slide level2">
 <h2>Images</h2>
@@ -575,42 +714,52 @@
 <h2>A slide with a plot</h2>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="co"># ^^ could be fragment, slide, column, column-fragment</span></span>
-<span id="cb4-2"><a href="#cb4-2"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb4-3"><a href="#cb4-3"></a>  <span class="fu">geom_point</span>(</span>
-<span id="cb4-4"><a href="#cb4-4"></a>    <span class="at">data =</span> mtcars,</span>
-<span id="cb4-5"><a href="#cb4-5"></a>    <span class="fu">aes</span>(wt, mpg),</span>
-<span id="cb4-6"><a href="#cb4-6"></a>    <span class="at">color =</span> <span class="st">"goldenrod"</span></span>
-<span id="cb4-7"><a href="#cb4-7"></a>  ) <span class="sc">+</span></span>
-<span id="cb4-8"><a href="#cb4-8"></a>  <span class="fu">labs</span>(</span>
-<span id="cb4-9"><a href="#cb4-9"></a>    <span class="at">title =</span> <span class="st">"Some Dots"</span></span>
-<span id="cb4-10"><a href="#cb4-10"></a>  ) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="co"># ^^ could be fragment, slide, column, column-fragment</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb6-3"><a href="#cb6-3"></a>  <span class="fu">geom_point</span>(</span>
+<span id="cb6-4"><a href="#cb6-4"></a>    <span class="at">data =</span> mtcars,</span>
+<span id="cb6-5"><a href="#cb6-5"></a>    <span class="fu">aes</span>(wt, mpg),</span>
+<span id="cb6-6"><a href="#cb6-6"></a>    <span class="at">color =</span> <span class="st">"goldenrod"</span></span>
+<span id="cb6-7"><a href="#cb6-7"></a>  ) <span class="sc">+</span></span>
+<span id="cb6-8"><a href="#cb6-8"></a>  <span class="fu">labs</span>(</span>
+<span id="cb6-9"><a href="#cb6-9"></a>    <span class="at">title =</span> <span class="st">"Some Dots"</span></span>
+<span id="cb6-10"><a href="#cb6-10"></a>  ) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column">
 <div class="cell-output-display">
-<p><img data-src="slide_deck_files/figure-revealjs/unnamed-chunk-3-1.png" width="1536"></p>
+<p><img data-src="slide_deck_files/figure-revealjs/unnamed-chunk-5-1.png" width="1536"></p>
 </div>
 </div>
 </div>
 </section>
 <section id="python" class="slide level2">
 <h2>Python</h2>
-<div class="sourceCode" id="cb5" data-code-line-numbers="6-8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb5-2"><a href="#cb5-2"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb5-3"><a href="#cb5-3"></a></span>
-<span id="cb5-4"><a href="#cb5-4"></a>r <span class="op">=</span> np.arange(<span class="dv">0</span>, <span class="dv">2</span>, <span class="fl">0.01</span>)</span>
-<span id="cb5-5"><a href="#cb5-5"></a>theta <span class="op">=</span> <span class="dv">2</span> <span class="op">*</span> np.pi <span class="op">*</span> r</span>
-<span id="cb5-6"><a href="#cb5-6"></a>fig, ax <span class="op">=</span> plt.subplots(subplot_kw<span class="op">=</span>{<span class="st">'projection'</span>: <span class="st">'polar'</span>})</span>
-<span id="cb5-7"><a href="#cb5-7"></a>ax.plot(theta, r)</span>
-<span id="cb5-8"><a href="#cb5-8"></a>ax.set_rticks([<span class="fl">0.5</span>, <span class="dv">1</span>, <span class="fl">1.5</span>, <span class="dv">2</span>])</span>
-<span id="cb5-9"><a href="#cb5-9"></a>ax.grid(<span class="va">True</span>)</span>
-<span id="cb5-10"><a href="#cb5-10"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7" data-code-line-numbers="6-8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb7-2"><a href="#cb7-2"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb7-3"><a href="#cb7-3"></a></span>
+<span id="cb7-4"><a href="#cb7-4"></a>r <span class="op">=</span> np.arange(<span class="dv">0</span>, <span class="dv">2</span>, <span class="fl">0.01</span>)</span>
+<span id="cb7-5"><a href="#cb7-5"></a>theta <span class="op">=</span> <span class="dv">2</span> <span class="op">*</span> np.pi <span class="op">*</span> r</span>
+<span id="cb7-6"><a href="#cb7-6"></a>fig, ax <span class="op">=</span> plt.subplots(subplot_kw<span class="op">=</span>{<span class="st">'projection'</span>: <span class="st">'polar'</span>})</span>
+<span id="cb7-7"><a href="#cb7-7"></a>ax.plot(theta, r)</span>
+<span id="cb7-8"><a href="#cb7-8"></a>ax.set_rticks([<span class="fl">0.5</span>, <span class="dv">1</span>, <span class="fl">1.5</span>, <span class="dv">2</span>])</span>
+<span id="cb7-9"><a href="#cb7-9"></a>ax.grid(<span class="va">True</span>)</span>
+<span id="cb7-10"><a href="#cb7-10"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="other" class="slide level2">
+<h2>Other</h2>
+<ul>
+<li>.scss (optional for style)</li>
+</ul>
 </section>
 <section id="references" class="slide level2 smaller scrollable">
 <h2>References</h2>
+<p><a href="https://biostats-r.github.io/biostats/quarto/">Biostats</a> - very useful resource for authoring documents in Quarto. This session draws from their content.</p>
 <div class="footer footer-default">
 
 </div>
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-chamberlin1897" class="csl-entry" role="doc-biblioentry">
+Chamberlin, T. C. 1897. <span>“The <span>Method</span> of <span>Multiple Working Hypotheses</span>.”</span> <em>The Journal of Geology</em> 5: 837–48.
+</div>
 <div id="ref-perkel2022" class="csl-entry" role="doc-biblioentry">
 Perkel, Jeffrey M. 2022. <span>“Cut the Tyranny of Copy-and-Paste with These Coding Tools.”</span> <em>Nature</em> 603 (7899): 191–92. <a href="https://doi.org/10.1038/d41586-022-00563-z">https://doi.org/10.1038/d41586-022-00563-z</a>.
 </div>
