@@ -14,7 +14,12 @@ theme:
   dark: darkly
 ---
 
+# Introduction
 
+
+# Packages and libraries {.unnumbered .unnumbered}
+
+It is good practice to include a list of packages used
 
 # Plots  {.tabset}
 ```{r}

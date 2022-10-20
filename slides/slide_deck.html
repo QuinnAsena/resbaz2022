@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.0.37">
 
   <meta name="author" content="Quinn Asena">
-  <meta name="dcterms.date" content="2022-10-19">
+  <meta name="dcterms.date" content="2022-10-20">
   <title>Authoring collaborative research projects using Quarto</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -409,7 +409,7 @@
   <h1 class="title">Authoring collaborative research projects using Quarto</h1>
   <p class="author">Quinn Asena</p>
   <p class="institute">UW-Madison</p>
-  <p class="date">10/19/22</p>
+  <p class="date">10/20/22</p>
 </section>
 
 <section>
@@ -457,7 +457,7 @@
 <h2>why collaborate via Quarto and Git?</h2>
 <ul>
 <li><p>Version control your projects</p></li>
-<li><p>reproducibility: whole workflow from data to results in one place</p></li>
+<li><p>Reproducibility: whole workflow from data to results in one place</p></li>
 <li><p>Host a live link consistent with current results (no more copy paste 7 plots into a word doc each time you change something!)</p></li>
 <li><p>Coding colaborators can contribute via a Git workflow</p></li>
 <li><p>Communicate results to non-coding collaborators</p></li>
@@ -471,16 +471,17 @@
 <section id="todays-goals" class="slide level2">
 <h2>Today’s goals</h2>
 <ul>
+<li><p>Learn the necessary components of a Quarto document for HTML</p></li>
 <li><p>Publish an example link on GitHub</p></li>
 <li><p>Have a working template you can use in the future</p></li>
-<li><p>Pointers to handy resources in the slides</p></li>
+<li><p>Know where to find help and useful resources</p></li>
 </ul>
 </section>
 <section id="zoom" class="slide level2">
 <h2>Zoom</h2>
 <ul>
 <li><p>Camera optional, but we love to see you (really, it helps me a lot!)</p></li>
-<li><p>During exercises give me a <span class="emoji" data-emoji="heavy_check_mark">✔️</span> when you are done or a <span class="emoji" data-emoji="hand">✋</span> if you need help</p></li>
+<li><p>During exercises, give me a <span class="emoji" data-emoji="heavy_check_mark">✔️</span> when you are done or a <span class="emoji" data-emoji="hand">✋</span> if you need help</p></li>
 <li><p>Drop questions in the Zoom chat or raise a hand at any time</p></li>
 <li><p>We support inclusivity and a positive environment through the Code of Conduct</p></li>
 </ul>
@@ -529,7 +530,7 @@
 <p>The YAML is a set of <code>key: value pairs</code> that are the metadata for your document, such as, author, title, output format, and citation file.</p>
 <ul>
 <li><p>YAML is whitespace sensitive</p></li>
-<li><p>Indent sensitive?</p></li>
+<li><p>Indent sensitive</p></li>
 </ul>
 </div><div class="column" style="width:50%;">
 <div class="sourceCode" id="cb1"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1"></a><span class="pp">---</span></span>
@@ -540,22 +541,22 @@
 </div>
 </div>
 </section>
-<section id="yaml-1" class="slide level2">
-<h2>YAML</h2>
+<section id="yaml-exercise" class="slide level2">
+<h2>YAML exercise</h2>
 <div class="callout callout-tip callout-captioned callout-style-default">
 <div class="callout-body">
 <div class="callout-caption">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>YAML Exersice</strong></p>
+<p><strong>YAML exersice</strong></p>
 </div>
 <div class="callout-content">
 <ul>
-<li><p>Open up the template.qmd and fill the <code>title: "Your title"</code> and <code>author: "You et al"</code> fields</p>
+<li><p>Open up the template.qmd and fill the <code>title:</code> and <code>name:</code> and <code>affiliation:</code> fieds.</p>
 <ul>
 <li><p>A couple of handy entries are already completed</p></li>
-<li><p>The existing field: <code>date: today</code> will generate today’s date (cool huh? ͡▀̿ ̿ ͜ʖ ͡▀̿ ̿ )</p></li>
+<li><p>The existing field: <code>date: today</code> will automatically generate today’s date (cool huh? ͡▀̿ ̿ ͜ʖ ͡▀̿ ̿ )</p></li>
 </ul></li>
 <li><p>Add a table of contents following the <a href="https://quarto.org/docs/output-formats/html-basics.html">guide</a></p></li>
 <li><p>Give me a <span class="emoji" data-emoji="heavy_check_mark">✔️</span> when done or a <span class="emoji" data-emoji="hand">✋</span> if you need help</p></li>
@@ -569,7 +570,10 @@
 <ul>
 <li><p>Writing in Quarto uses <a href="https://quarto.org/docs/authoring/markdown-basics.html">markdown syntax</a></p></li>
 <li><p>LaTeX is used to render PDFs so LaTeX commands can be used for PDF outputs</p></li>
-<li><p>Look! I can do fancy maths: <span class="math inline">\(f_{c}=z^{2}+c\)</span> ͡▀̿ ̿ ͜ʖ ͡▀̿ ̿</p></li>
+<li><p>Look! I can do fancy maths: <span class="math inline">\(f_{c}=z^{2}+c\)</span></p>
+<ul>
+<li>▀̿ ̿ ͜ʖ ͡▀̿ ̿</li>
+</ul></li>
 </ul>
 <div class="callout callout-note callout-captioned callout-style-default">
 <div class="callout-body">
@@ -581,6 +585,31 @@
 </div>
 <div class="callout-content">
 <p>Render regularly. Small errors can be tricky to pick out long after they have been made.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="text-exercise" class="slide level2">
+<h2>Text exercise</h2>
+<div class="callout callout-tip callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Text exersice</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li><p>Check out <a href="https://quarto.org/docs/authoring/markdown-basics.html">Quarto’s markdown guide</a></p></li>
+<li><p>and the <a href="https://biostats-r.github.io/biostats/quarto/04-figures-tables.html#equations">biostats guide to writing</a></p></li>
+<li><p>Take 3-4 minutes to write:</p>
+<ul>
+<li>a heading</li>
+<li>a list</li>
+<li>and A lian equation</li>
+</ul></li>
+</ul>
 </div>
 </div>
 </div>

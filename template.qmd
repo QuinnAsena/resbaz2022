@@ -14,8 +14,20 @@ theme:
   dark: darkly
 ---
 
-# Text in Markdown
+# Introduction
 
+
+# Libraries {.unnumbered .unlisted}
+
+Generally it is good practice to include a list of packages you use in the analysis. But you ay not need to show them in the output. 
+
+```{r Libraries}
+#| include: false
+
+
+```
+
+# 
 
 # Plots  {.tabset}
 ```{r}
