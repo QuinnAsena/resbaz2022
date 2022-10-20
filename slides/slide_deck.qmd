@@ -59,7 +59,7 @@ title-slide-attributes:
 
 - Version control your projects
 
-- reproducibility: whole workflow from data to results in one place
+- Reproducibility: whole workflow from data to results in one place
 
 - Host a live link consistent with current results (no more copy paste 7 plots into a word doc each time you change something!)
 
@@ -71,17 +71,19 @@ title-slide-attributes:
 
 ## Today's goals
 
+- Learn the necessary components of a Quarto document for HTML
+
 - Publish an example link on GitHub
 
 - Have a working template you can use in the future
 
-- Pointers to handy resources in the slides
+- Know where to find help and useful resources
 
 ## Zoom
 
 - Camera optional, but we love to see you (really, it helps me a lot!)
 
-- During exercises give me a :heavy_check_mark: when you are done or a :hand: if you need help
+- During exercises, give me a :heavy_check_mark: when you are done or a :hand: if you need help
 
 - Drop questions in the Zoom chat or raise a hand at any time
 
@@ -124,7 +126,7 @@ The YAML is a set of `key: value pairs` that are the metadata for your document,
 
 - YAML is whitespace sensitive
 
-- Indent sensitive?
+- Indent sensitive
 
 :::
 
@@ -139,21 +141,20 @@ date: today
 :::
 ::::
 
-## YAML
+## YAML exercise
 
 :::{.callout-tip}
-# YAML Exersice
-- Open up the template.qmd and fill the `title: "Your title"` and `author: "You et al"` fields
+# YAML exersice
+- Open up the template.qmd and fill the `title: ` and `name: ` and `affiliation: ` fieds.
 
   - A couple of handy entries are already completed
 
-  - The existing field: `date: today` will generate today's date (cool huh?  ͡▀̿ ̿ ͜ʖ ͡▀̿ ̿ )
+  - The existing field: `date: today` will automatically generate today's date (cool huh?  ͡▀̿ ̿ ͜ʖ ͡▀̿ ̿ )
 
 
 - Add a table of contents following the [guide](https://quarto.org/docs/output-formats/html-basics.html)
 
 - Give me a :heavy_check_mark: when done or a :hand: if you need help
-
 :::
 
 ## Text
@@ -162,12 +163,29 @@ date: today
 
 - LaTeX is used to render PDFs so LaTeX commands can be used for PDF outputs
 
-- Look! I can do fancy maths: $f_{c}=z^{2}+c$  ͡▀̿ ̿ ͜ʖ ͡▀̿ ̿ 
+- Look! I can do fancy maths: $f_{c}=z^{2}+c$
+  - ▀̿ ̿ ͜ʖ ͡▀̿ ̿ 
 
 :::{.callout-note}
 # Pro tip!
 Render regularly. Small errors can be tricky to pick out long after they have been made.
 :::
+
+## Text exercise
+
+:::{.callout-tip}
+# Text exersice
+
+- Check out [Quarto's markdown guide](https://quarto.org/docs/authoring/markdown-basics.html)
+
+- and the [biostats guide to writing](https://biostats-r.github.io/biostats/quarto/04-figures-tables.html#equations)
+
+- Take 3-4 minutes to write:
+  - a heading
+  - a list
+  - and A lian equation
+:::
+
 
 ## Citations
 
