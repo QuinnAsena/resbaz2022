@@ -7,10 +7,10 @@
 <link href="slide_deck_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="slide_deck_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="slide_deck_files/libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.0.37">
+  <meta name="generator" content="quarto-1.0.38">
 
   <meta name="author" content="Quinn Asena">
-  <meta name="dcterms.date" content="2022-10-20">
+  <meta name="dcterms.date" content="2022-10-21">
   <title>Authoring collaborative research projects using Quarto</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -409,7 +409,7 @@
   <h1 class="title">Authoring collaborative research projects using Quarto</h1>
   <p class="author">Quinn Asena</p>
   <p class="institute">UW-Madison</p>
-  <p class="date">10/20/22</p>
+  <p class="date">10/21/22</p>
 </section>
 
 <section>
@@ -469,7 +469,7 @@
 
 </section>
 <section id="todays-goals" class="slide level2">
-<h2>Today’s goals</h2>
+<h2>today’s goals</h2>
 <ul>
 <li><p>Learn the necessary components of a Quarto document for HTML</p></li>
 <li><p>Publish an example link on GitHub</p></li>
@@ -487,7 +487,7 @@
 </ul>
 </section>
 <section id="first-things-first" class="slide level2">
-<h2>First things first</h2>
+<h2>first things first</h2>
 <ul>
 <li><p>Open up VS Code and navigate to the source control</p>
 <ul>
@@ -511,7 +511,7 @@
 </div>
 </section>
 <section id="elements-of-a-quarto-file" class="slide level2">
-<h2>Elements of a Quarto file</h2>
+<h2>elements of a Quarto file</h2>
 <div>
 <ul>
 <li class="fragment"><p>YAML</p></li>
@@ -559,14 +559,15 @@
 <li><p>The existing field: <code>date: today</code> will automatically generate today’s date (cool huh? ͡▀̿ ̿ ͜ʖ ͡▀̿ ̿ )</p></li>
 </ul></li>
 <li><p>Add a table of contents following the <a href="https://quarto.org/docs/output-formats/html-basics.html">guide</a></p></li>
+<li><p>Render the document</p></li>
 <li><p>Give me a <span class="emoji" data-emoji="heavy_check_mark">✔️</span> when done or a <span class="emoji" data-emoji="hand">✋</span> if you need help</p></li>
 </ul>
 </div>
 </div>
 </div>
 </section>
-<section id="text" class="slide level2">
-<h2>Text</h2>
+<section id="text-editing" class="slide level2">
+<h2>text editing</h2>
 <ul>
 <li><p>Writing in Quarto uses <a href="https://quarto.org/docs/authoring/markdown-basics.html">markdown syntax</a></p></li>
 <li><p>LaTeX is used to render PDFs so LaTeX commands can be used for PDF outputs</p></li>
@@ -589,33 +590,8 @@
 </div>
 </div>
 </section>
-<section id="text-exercise" class="slide level2">
-<h2>Text exercise</h2>
-<div class="callout callout-tip callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Text exersice</strong></p>
-</div>
-<div class="callout-content">
-<ul>
-<li><p>Check out <a href="https://quarto.org/docs/authoring/markdown-basics.html">Quarto’s markdown guide</a></p></li>
-<li><p>and the <a href="https://biostats-r.github.io/biostats/quarto/04-figures-tables.html#equations">biostats guide to writing</a></p></li>
-<li><p>Take 3-4 minutes to write:</p>
-<ul>
-<li>a heading</li>
-<li>a list</li>
-<li>and A lian equation</li>
-</ul></li>
-</ul>
-</div>
-</div>
-</div>
-</section>
-<section id="citations" class="slide level2">
-<h2>Citations</h2>
+<section id="including-a-bibliography" class="slide level2">
+<h2>including a bibliography</h2>
 <p>Citations require:</p>
 <ul>
 <li><p>a <code>.bib</code> or <code>.bibtex</code> file in your working directory (one is included for today)</p>
@@ -629,50 +605,111 @@
 </ul></li>
 </ul>
 </section>
-<section id="citations-1" class="slide level2">
-<h2>Citations</h2>
-<p>Citing work in-text <a href="https://quarto.org/docs/authoring/footnotes-and-citations.html#sec-citations">follows the <code>@citekey</code> format</a></p>
+<section id="in-text-citations" class="slide level2">
+<h2>in-text citations</h2>
+<p>Citing work in-text <a href="https://quarto.org/docs/visual-editor/technical.html#inserting-citations">follows the <code>@citekey</code> format</a></p>
 <ul>
 <li><p><code>@perkel2022</code> = <span class="citation" data-cites="perkel2022">Perkel (<a href="#/ref-perkel2022" role="doc-biblioref" onclick="return false;">2022</a>)</span></p></li>
 <li><p><code>[@chamberlin1897; @perkel2022]</code> = <span class="citation" data-cites="chamberlin1897 perkel2022">(<a href="#/ref-chamberlin1897" role="doc-biblioref" onclick="return false;">Chamberlin 1897</a>; <a href="#/ref-perkel2022" role="doc-biblioref" onclick="return false;">Perkel 2022</a>)</span></p></li>
+<li><p>Quarto, by default, creates a final section in your document named ‘References’ with a formatted reference list.</p></li>
 </ul>
-<p>We won’t go deeper into citations for now as we are not authoring an article today. The link above has info for authoring.</p>
+<p>We won’t go deeper into citations for now as we are not authoring an article today. The link above has info for technical writing.</p>
+</section>
+<section id="handy-features" class="slide level2">
+<h2>handy features</h2>
+<p>The RStudio IDE has some handy features using the visual editor:</p>
+<ul>
+<li><p><a href="https://rstudio.github.io/visual-markdown-editing/">Visual R Markdown</a></p></li>
+<li><p><a href="https://quarto.org/docs/visual-editor/content.html">Content editing</a></p></li>
+<li><p><a href="https://quarto.org/docs/visual-editor/technical.htm">Technical writing</a></p></li>
+</ul>
+<p>VS Code also has cool features:</p>
+<ul>
+<li><a href="https://quarto.org/docs/tools/vscode.html#yaml-intelligence">Like YAML intelligence</a></li>
+</ul>
 </section>
 <section id="markdown-exercise" class="slide level2">
-<h2>Markdown exercise</h2>
+<h2>markdown exercise</h2>
 <div class="callout callout-tip callout-captioned callout-style-default">
 <div class="callout-body">
 <div class="callout-caption">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Markdown Exersice</strong></p>
+<p><strong>Markdown exercise</strong></p>
 </div>
 <div class="callout-content">
-<p>The template has some basic…..</p>
+<ul>
+<li><p>Check out <a href="https://quarto.org/docs/authoring/markdown-basics.html">Quarto’s markdown guide</a></p></li>
+<li><p>and the <a href="https://biostats-r.github.io/biostats/quarto/04-figures-tables.html#equations">biostats guide to writing</a></p></li>
+</ul>
+<p>In the template Introduction section take 3-4 minutes to write:</p>
+<ul>
+<li><p>a heading</p></li>
+<li><p>a list</p></li>
+<li><p>and an equation</p></li>
+<li><p>cite one of the articles using the <code>@</code></p></li>
+<li><p>render the document and hit the <span class="emoji" data-emoji="heavy_check_mark">✔️</span> in zoom</p></li>
+</ul>
 </div>
 </div>
 </div>
 </section>
 <section id="code-blocks" class="slide level2">
-<h2>Code blocks</h2>
-<p>Code blocks are inserted like this:</p>
+<h2>code blocks</h2>
+<p>Code is executed when the document is rendered. Code blockss can also be executed individually just like regular R markdown if you are already familiar with that. Code blocks are inserted like this:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1"></a><span class="in">```{r}</span></span>
 <span id="cb2-2"><a href="#cb2-2"></a><span class="co">#| eval: false</span></span>
 <span id="cb2-3"><a href="#cb2-3"></a><span class="dv">6</span><span class="sc">*</span><span class="dv">7</span></span>
 <span id="cb2-4"><a href="#cb2-4"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Or:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1"></a><span class="in">```{python}</span></span>
-<span id="cb3-2"><a href="#cb3-2"></a><span class="co">#| eval: false</span></span>
-<span id="cb3-3"><a href="#cb3-3"></a><span class="dv">2</span><span class="op">*</span><span class="dv">21</span></span>
-<span id="cb3-4"><a href="#cb3-4"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Code block options are set with a special comment: <code>#|</code> (white space sensitive!). <a href="https://quarto.org/docs/computations/execution-options.html">Block options</a> determine how the code is executed, e.g., whether to display the code block: <code>#| echo: true</code>, warning messages <code>#| warning: false</code>, and to input captions <code>#| fig-cap: "A really good figure caption!"</code>.</p>
+<div class="callout callout-note callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Pro tip!</strong></p>
+</div>
+<div class="callout-content">
+<p>Unlike R markdown, block options are lower case true/false and the comment <code>#|</code> must be followed by a space.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="inline-code" class="slide level2">
+<h2>inline code</h2>
+<p>Code can also be executed inline:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1"></a>Seven times six is <span class="in">`r 7 * 6`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Inline code execution can be helpful referencing values in text like: there are <code>nrow(data)</code> observations in the data.</p>
+</section>
+<section id="code-exercise" class="slide level2">
+<h2>code exercise</h2>
+<div class="callout callout-tip callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Code block exercise</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li><p>Check out the <a href="https://quarto.org/docs/computations/execution-options.html">Block options</a> and edit the existing code block options to:</p></li>
+<li><p>display the results</p></li>
+<li><p>exclude the code</p></li>
+<li><p>include a figure caption</p></li>
+<li><p>render the document and hit the <span class="emoji" data-emoji="heavy_check_mark">✔️</span> in zoom</p></li>
+</ul>
+</div>
+</div>
 </div>
 </section>
 <section id="tabsets" class="slide level2 scrollable">
-<h2>Tabsets</h2>
+<h2>tabsets</h2>
+<p>Ok now the feature I find <em>very</em> useful: tabsets. Tabsets are great for showing, multiple results, data, code, whatever you want in tabs.</p>
 <div class="panel-tabset">
 <ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Code</a></li><li><a href="#tabset-1-2">Data</a></li><li><a href="#tabset-1-3">Plot</a></li></ul>
 <div class="tab-content">
@@ -728,56 +765,14 @@
 </section>
 <section id="tabset-code" class="slide level2">
 <h2>Tabset code</h2>
-<p>tabsets are input using:</p>
+<p>Tabsets are created by:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode numberSource quarto number-lines code-with-copy"><code class="sourceCode"><span id="cb5-1"><a href="#cb5-1"></a>::: panel-tabset</span>
 <span id="cb5-2"><a href="#cb5-2"></a># Tab 1</span>
-<span id="cb5-3"><a href="#cb5-3"></a></span>
-<span id="cb5-4"><a href="#cb5-4"></a># Tab 2</span>
-<span id="cb5-5"><a href="#cb5-5"></a></span>
-<span id="cb5-6"><a href="#cb5-6"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="images" class="slide level2">
-<h2>Images</h2>
-</section>
-<section id="a-slide-with-a-plot" class="slide level2 scrollable">
-<h2>A slide with a plot</h2>
-<div class="cell columns column-output-location">
-<div class="column">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="co"># ^^ could be fragment, slide, column, column-fragment</span></span>
-<span id="cb6-2"><a href="#cb6-2"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb6-3"><a href="#cb6-3"></a>  <span class="fu">geom_point</span>(</span>
-<span id="cb6-4"><a href="#cb6-4"></a>    <span class="at">data =</span> mtcars,</span>
-<span id="cb6-5"><a href="#cb6-5"></a>    <span class="fu">aes</span>(wt, mpg),</span>
-<span id="cb6-6"><a href="#cb6-6"></a>    <span class="at">color =</span> <span class="st">"goldenrod"</span></span>
-<span id="cb6-7"><a href="#cb6-7"></a>  ) <span class="sc">+</span></span>
-<span id="cb6-8"><a href="#cb6-8"></a>  <span class="fu">labs</span>(</span>
-<span id="cb6-9"><a href="#cb6-9"></a>    <span class="at">title =</span> <span class="st">"Some Dots"</span></span>
-<span id="cb6-10"><a href="#cb6-10"></a>  ) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div><div class="column">
-<div class="cell-output-display">
-<p><img data-src="slide_deck_files/figure-revealjs/unnamed-chunk-5-1.png" width="1536"></p>
-</div>
-</div>
-</div>
-</section>
-<section id="python" class="slide level2">
-<h2>Python</h2>
-<div class="sourceCode" id="cb7" data-code-line-numbers="6-8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb7-2"><a href="#cb7-2"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb7-3"><a href="#cb7-3"></a></span>
-<span id="cb7-4"><a href="#cb7-4"></a>r <span class="op">=</span> np.arange(<span class="dv">0</span>, <span class="dv">2</span>, <span class="fl">0.01</span>)</span>
-<span id="cb7-5"><a href="#cb7-5"></a>theta <span class="op">=</span> <span class="dv">2</span> <span class="op">*</span> np.pi <span class="op">*</span> r</span>
-<span id="cb7-6"><a href="#cb7-6"></a>fig, ax <span class="op">=</span> plt.subplots(subplot_kw<span class="op">=</span>{<span class="st">'projection'</span>: <span class="st">'polar'</span>})</span>
-<span id="cb7-7"><a href="#cb7-7"></a>ax.plot(theta, r)</span>
-<span id="cb7-8"><a href="#cb7-8"></a>ax.set_rticks([<span class="fl">0.5</span>, <span class="dv">1</span>, <span class="fl">1.5</span>, <span class="dv">2</span>])</span>
-<span id="cb7-9"><a href="#cb7-9"></a>ax.grid(<span class="va">True</span>)</span>
-<span id="cb7-10"><a href="#cb7-10"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="other" class="slide level2">
-<h2>Other</h2>
-<ul>
-<li>.scss (optional for style)</li>
-</ul>
+<span id="cb5-3"><a href="#cb5-3"></a>content</span>
+<span id="cb5-4"><a href="#cb5-4"></a></span>
+<span id="cb5-5"><a href="#cb5-5"></a># Tab 2</span>
+<span id="cb5-6"><a href="#cb5-6"></a>content</span>
+<span id="cb5-7"><a href="#cb5-7"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="references" class="slide level2 smaller scrollable">
 <h2>References</h2>

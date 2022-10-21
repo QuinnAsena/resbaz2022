@@ -69,7 +69,7 @@ title-slide-attributes:
 
 # Buckle up, ready your coding fingers!
 
-## Today's goals
+## today's goals
 
 - Learn the necessary components of a Quarto document for HTML
 
@@ -89,7 +89,7 @@ title-slide-attributes:
 
 - We support inclusivity and a positive environment through the Code of Conduct
 
-## First things first
+## first things first
 
 - Open up VS Code and navigate to the source control
   - Clone the repo: https://github.com/QuinnAsena/resbaz2022.git
@@ -102,7 +102,7 @@ title-slide-attributes:
 We are using VS Code, R, and GitHub. If you have a preferred workflow like RStudio, Python, or GitKraken you can use them but may be harder to follow the session content. Afterall, Quarto is supposed to be flexible!
 :::
 
-## Elements of a Quarto file
+## elements of a Quarto file
 
 :::{.incremental}
 - YAML
@@ -127,7 +127,6 @@ The YAML is a set of `key: value pairs` that are the metadata for your document,
 - YAML is whitespace sensitive
 
 - Indent sensitive
-
 :::
 
 :::{.column width="50%"}
@@ -151,13 +150,14 @@ date: today
 
   - The existing field: `date: today` will automatically generate today's date (cool huh?  ͡▀̿ ̿ ͜ʖ ͡▀̿ ̿ )
 
-
 - Add a table of contents following the [guide](https://quarto.org/docs/output-formats/html-basics.html)
+
+- Render the document
 
 - Give me a :heavy_check_mark: when done or a :hand: if you need help
 :::
 
-## Text
+## text editing
 
 - Writing in Quarto uses [markdown syntax](https://quarto.org/docs/authoring/markdown-basics.html) 
 
@@ -171,23 +171,8 @@ date: today
 Render regularly. Small errors can be tricky to pick out long after they have been made.
 :::
 
-## Text exercise
 
-:::{.callout-tip}
-# Text exersice
-
-- Check out [Quarto's markdown guide](https://quarto.org/docs/authoring/markdown-basics.html)
-
-- and the [biostats guide to writing](https://biostats-r.github.io/biostats/quarto/04-figures-tables.html#equations)
-
-- Take 3-4 minutes to write:
-  - a heading
-  - a list
-  - and A lian equation
-:::
-
-
-## Citations
+## including a bibliography
 
 Citations require:
 
@@ -201,43 +186,105 @@ Citations require:
 
   - Useful for authoring articles as `CSL` files are [downloadable for specific journals](https://github.com/citation-style-language/styles)
 
-## Citations
+## in-text citations
 
-Citing work in-text [follows the `@citekey` format](https://quarto.org/docs/authoring/footnotes-and-citations.html#sec-citations)
+Citing work in-text [follows the `@citekey` format](https://quarto.org/docs/visual-editor/technical.html#inserting-citations)
 
 - `@perkel2022` = @perkel2022
 
 - `[@chamberlin1897; @perkel2022]` = [@chamberlin1897; @perkel2022]
 
-We won't go deeper into citations for now as we are not authoring an article today. The link above has info for authoring.
+- Quarto, by default, creates a final section in your document named 'References' with a formatted reference list.
 
-## Markdown exercise
+We won't go deeper into citations for now as we are not authoring an article today. The link above has info for technical writing.
+
+## handy features
+
+The RStudio IDE has some handy features using the visual editor:
+
+- [Visual R Markdown](https://rstudio.github.io/visual-markdown-editing/)
+
+- [Content editing](https://quarto.org/docs/visual-editor/content.html)
+
+- [Technical writing](https://quarto.org/docs/visual-editor/technical.htm)
+
+VS Code also has cool features:
+
+- [Like YAML intelligence](https://quarto.org/docs/tools/vscode.html#yaml-intelligence)
+
+## markdown exercise
 
 :::{.callout-tip}
-# Markdown Exersice
+# Markdown exercise
 
-The template has some basic.....
+- Check out [Quarto's markdown guide](https://quarto.org/docs/authoring/markdown-basics.html)
 
+- and the [biostats guide to writing](https://biostats-r.github.io/biostats/quarto/04-figures-tables.html#equations)
+
+In the template Introduction section take 3-4 minutes to write:
+
+- a heading
+
+- a list
+
+- and an equation
+
+- cite one of the articles using the `@`
+
+- render the document and hit the :heavy_check_mark: in zoom
 :::
 
-## Code blocks
 
-Code blocks are inserted like this:
+## code blocks
+
+Code is executed when the document is rendered. Code blockss can also be executed individually just like regular R markdown if you are already familiar with that. Code blocks are inserted like this:
 ```{r}
 #| echo: fenced
 #| eval: false
 6*7
 ```
 
-Or:
+Code block options are set with a special comment: `#| ` (white space sensitive!). [Block options](https://quarto.org/docs/computations/execution-options.html) determine how the code is executed, e.g., whether to display the code block: `#| echo: true`, warning messages `#| warning: false`, and to input captions `#| fig-cap: "A really good figure caption!"`.
 
-```{python}
-#| echo: fenced
-#| eval: false
-2*21
+:::{.callout-note}
+# Pro tip!
+Unlike R markdown, block options are lower case true/false and the comment `#| ` must be followed by a space.
+:::
+
+## inline code
+
+Code can also be executed inline:
+
+```{r}
+#| echo: false
+#| results: asis
+cat("``` markdown\n")
+cat("Seven times six is `r 7 * 6`")
+cat("\n```")
 ```
 
-## Tabsets {.scrollable}
+Inline code execution can be helpful referencing values in text like: there are `nrow(data)` observations in the data.
+
+## code exercise
+
+:::{.callout-tip}
+# Code block exercise
+
+- Check out the [Block options](https://quarto.org/docs/computations/execution-options.html) and edit the existing code block options to:
+
+ - display the results
+
+ - exclude the code
+
+ - include a figure caption
+
+ - render the document and hit the :heavy_check_mark: in zoom
+:::
+
+
+## tabsets {.scrollable}
+
+Ok now the feature I find *very* useful: tabsets. Tabsets are great for showing, multiple results, data, code, whatever you want in tabs.
 
 ::: panel-tabset
 # Code
@@ -282,59 +329,20 @@ mass_flipper
 
 ## Tabset code
 
-tabsets are input using:
+Tabsets are created by:
 
 ```quarto
 ::: panel-tabset
 # Tab 1
+content
 
 # Tab 2
-
+content
 :::
 
 ```
 
 
-## Images
-
-## A slide with a plot {.scrollable}
-
-```{r}
-#| echo: true
-#| fig.retina: 2
-#| fig.height: 9
-#| fig.width: 16
-#| output-location: column
-# ^^ could be fragment, slide, column, column-fragment
-ggplot() +
-  geom_point(
-    data = mtcars,
-    aes(wt, mpg),
-    color = "goldenrod"
-  ) +
-  labs(
-    title = "Some Dots"
-  ) 
-```
-
-## Python
-
-```{.python code-line-numbers="6-8"}
-import numpy as np
-import matplotlib.pyplot as plt
-
-r = np.arange(0, 2, 0.01)
-theta = 2 * np.pi * r
-fig, ax = plt.subplots(subplot_kw={'projection': 'polar'})
-ax.plot(theta, r)
-ax.set_rticks([0.5, 1, 1.5, 2])
-ax.grid(True)
-plt.show()
-```
-
-## Other
-
-- .scss (optional for style)
 
 
 ## References
