@@ -194,9 +194,17 @@ Citing work in-text [follows the `@citekey` format](https://quarto.org/docs/visu
 
 - `[@chamberlin1897; @perkel2022]` = [@chamberlin1897; @perkel2022]
 
-- Quarto, by default, creates a final section in your document named 'References' with a formatted reference list.
+- Quarto, by default, inserts a formatted reference list at the end of the document so I put an empty 'References' header.
 
 We won't go deeper into citations for now as we are not authoring an article today. The link above has info for technical writing.
+
+## equations
+
+Pretty, formatted equations can be inserted using the same syntax as in LaTeX. Inline equations (e.g., $E = mc^2$) are surrounded by a `$` and equation bocks are surrounded by `$$`:
+
+$$
+N_{t+1} = N_t + r_{d}N_t \left(1- \frac{N_t}{K} \right)
+$$
 
 ## handy features
 
@@ -223,13 +231,13 @@ VS Code also has cool features:
 
 In the template Introduction section take 3-4 minutes to write:
 
-- a heading
+- a sub-heading under the introduction
 
 - a list
 
 - and an equation
 
-- cite one of the articles using the `@`
+- cite one of the articles in in existing `.bib` file using the `@`
 
 - render the document and hit the :heavy_check_mark: in zoom
 :::
@@ -342,7 +350,26 @@ content
 
 ```
 
+## Let'g go Git it
 
+You're now ready to host your first live link!
+
+:::{.callout-tip}
+# GitHub
+
+- Render your project so that most recent changes are included in the HTML
+
+- In the source control on the left commit and push your changes
+ 
+  - You can do this however you prefer, commandline, GUI, source control...
+
+- Head over to GitHub in your browser and go:
+
+  - Settings -> GitHub pages -> enable github pages
+
+- By default, your link will be hosted at: https://githubusername.github.io/reponame/pathtodocument.html
+
+:::
 
 
 ## References
