@@ -118,8 +118,6 @@ We are using VS Code, R, and GitHub. If you have a preferred workflow like RStud
 
 ## YAML
 
-Your Turn :computer: :
-
 ::::{.columns}
 :::{.column width="50%"}
 The YAML is a set of `key: value pairs` that are the metadata for your document, such as, author, title, output format, and citation file.
@@ -141,6 +139,8 @@ date: today
 ::::
 
 ## YAML exercise
+
+Your Turn :computer: :
 
 :::{.callout-tip}
 # YAML exersice

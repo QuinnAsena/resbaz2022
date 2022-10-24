@@ -7,10 +7,10 @@
 <link href="slide_deck_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="slide_deck_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="slide_deck_files/libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.0.38">
+  <meta name="generator" content="quarto-1.0.37">
 
   <meta name="author" content="Quinn Asena">
-  <meta name="dcterms.date" content="2022-10-21">
+  <meta name="dcterms.date" content="2022-10-24">
   <title>Authoring collaborative research projects using Quarto</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -409,7 +409,7 @@
   <h1 class="title">Authoring collaborative research projects using Quarto</h1>
   <p class="author">Quinn Asena</p>
   <p class="institute">UW-Madison</p>
-  <p class="date">10/21/22</p>
+  <p class="date">10/24/22</p>
 </section>
 
 <section>
@@ -524,7 +524,6 @@
 </section>
 <section id="yaml" class="slide level2">
 <h2>YAML</h2>
-<p>Your Turn <span class="emoji" data-emoji="computer">💻</span> :</p>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p>The YAML is a set of <code>key: value pairs</code> that are the metadata for your document, such as, author, title, output format, and citation file.</p>
@@ -543,6 +542,7 @@
 </section>
 <section id="yaml-exercise" class="slide level2">
 <h2>YAML exercise</h2>
+<p>Your Turn <span class="emoji" data-emoji="computer">💻</span> :</p>
 <div class="callout callout-tip callout-captioned callout-style-default">
 <div class="callout-body">
 <div class="callout-caption">
@@ -611,9 +611,16 @@
 <ul>
 <li><p><code>@perkel2022</code> = <span class="citation" data-cites="perkel2022">Perkel (<a href="#/ref-perkel2022" role="doc-biblioref" onclick="return false;">2022</a>)</span></p></li>
 <li><p><code>[@chamberlin1897; @perkel2022]</code> = <span class="citation" data-cites="chamberlin1897 perkel2022">(<a href="#/ref-chamberlin1897" role="doc-biblioref" onclick="return false;">Chamberlin 1897</a>; <a href="#/ref-perkel2022" role="doc-biblioref" onclick="return false;">Perkel 2022</a>)</span></p></li>
-<li><p>Quarto, by default, creates a final section in your document named ‘References’ with a formatted reference list.</p></li>
+<li><p>Quarto, by default, inserts a formatted reference list at the end of the document so I put an empty ‘References’ header.</p></li>
 </ul>
 <p>We won’t go deeper into citations for now as we are not authoring an article today. The link above has info for technical writing.</p>
+</section>
+<section id="equations" class="slide level2">
+<h2>equations</h2>
+<p>Pretty, formatted equations can be inserted using the same syntax as in LaTeX. Inline equations (e.g., <span class="math inline">\(E = mc^2\)</span>) are surrounded by a <code>$</code> and equation bocks are surrounded by <code>$$</code>:</p>
+<p><span class="math display">\[
+N_{t+1} = N_t + r_{d}N_t \left(1- \frac{N_t}{K} \right)
+\]</span></p>
 </section>
 <section id="handy-features" class="slide level2">
 <h2>handy features</h2>
@@ -645,10 +652,10 @@
 </ul>
 <p>In the template Introduction section take 3-4 minutes to write:</p>
 <ul>
-<li><p>a heading</p></li>
+<li><p>a sub-heading under the introduction</p></li>
 <li><p>a list</p></li>
 <li><p>and an equation</p></li>
-<li><p>cite one of the articles using the <code>@</code></p></li>
+<li><p>cite one of the articles in in existing <code>.bib</code> file using the <code>@</code></p></li>
 <li><p>render the document and hit the <span class="emoji" data-emoji="heavy_check_mark">✔️</span> in zoom</p></li>
 </ul>
 </div>
@@ -657,7 +664,7 @@
 </section>
 <section id="code-blocks" class="slide level2">
 <h2>code blocks</h2>
-<p>Code is executed when the document is rendered. Code blockss can also be executed individually just like regular R markdown if you are already familiar with that. Code blocks are inserted like this:</p>
+<p>Code is executed when the document is rendered. Code blocks can also be executed individually just like regular R markdown if you are already familiar with that. Code blocks are inserted like this:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1"></a><span class="in">```{r}</span></span>
 <span id="cb2-2"><a href="#cb2-2"></a><span class="co">#| eval: false</span></span>
@@ -697,7 +704,7 @@
 </div>
 <div class="callout-content">
 <ul>
-<li><p>Check out the <a href="https://quarto.org/docs/computations/execution-options.html">Block options</a> and edit the existing code block options to:</p></li>
+<li><p>Check out the <a href="https://quarto.org/docs/computations/execution-options.html">Block options</a> and edit the existing code block options in the ‘Libraries section’ to:</p></li>
 <li><p>display the results</p></li>
 <li><p>exclude the code</p></li>
 <li><p>include a figure caption</p></li>
@@ -773,6 +780,34 @@
 <span id="cb5-5"><a href="#cb5-5"></a># Tab 2</span>
 <span id="cb5-6"><a href="#cb5-6"></a>content</span>
 <span id="cb5-7"><a href="#cb5-7"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="letg-go-git-it" class="slide level2">
+<h2>Let’g go Git it</h2>
+<p>You’re now ready to host your first live link!</p>
+<div class="callout callout-tip callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>GitHub</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li><p>Render your project so that most recent changes are included in the HTML</p></li>
+<li><p>In the source control on the left commit and push your changes</p>
+<ul>
+<li>You can do this however you prefer, commandline, GUI, source control…</li>
+</ul></li>
+<li><p>Head over to GitHub in your browser and go:</p>
+<ul>
+<li>Settings -&gt; GitHub pages -&gt; enable github pages</li>
+</ul></li>
+<li><p>By default, your link will be hosted at: https://githubusername.github.io/reponame/pathtodocument.html</p></li>
+</ul>
+</div>
+</div>
+</div>
 </section>
 <section id="references" class="slide level2 smaller scrollable">
 <h2>References</h2>
