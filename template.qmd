@@ -1,5 +1,5 @@
 ---
-title: "Your title"
+title: "Your awesome project title"
 author:
   name: "You et al"
   affiliation: "From whence you hail"
@@ -14,17 +14,66 @@ theme:
   dark: darkly
 ---
 
+:::{.callout-tip}
+# YAML exersice
+- Fill the `title: ` and `name: ` and `affiliation: ` fieds.
+
+  - a couple of handy entries are already completed
+
+  - the existing field: `date: today` will automatically generate today's date (cool huh?  ͡▀̿ ̿ ͜ʖ ͡▀̿ ̿ )
+
+- Add a table of contents following the [guide](https://quarto.org/docs/output-formats/html-basics.html)
+
+- Remove this callout block and render the document
+
+- Give me a :heavy_check_mark: when done or a :hand: if you need help
+:::
+
 # Introduction
 
+:::{.callout-tip}
+# Markdown exercise
+
+- Check out [Quarto's markdown guide](https://quarto.org/docs/authoring/markdown-basics.html)
+
+- and the [biostats guide to writing](https://biostats-r.github.io/biostats/quarto/04-figures-tables.html#equations)
+
+In the template Introduction section take 3-4 minutes to write:
+
+- a sub-heading under the introduction
+
+- a list
+
+- and an equation
+
+- cite one of the articles in in existing `.bib` file using the `@`
+
+- remove this callout  and render the document and hit the :heavy_check_mark: in zoom
+:::
 
 # Libraries {.unnumbered .unlisted}
 
-Generally it is good practice to include a list of packages you use in the analysis. But you ay not need to show them in the output. 
+Generally it is good practice to include a list of packages you use up front. But you may not need to show them in the output or list them in the table of contents. The `{.unnumbered .unlisted}` commands following the title remove this section from the table of contents but it will remain in the text. Quarto accepts multiple coding languages, the following example uses R. I have set up working R code chunks so that for this tutorial you do not need to be familiar with R necessarily. The code block options **May be the same...**
+
+:::{.callout-tip}
+# Code block exercise
+
+- Check out the [Block options](https://quarto.org/docs/computations/execution-options.html) and edit the existing code block options below to:
+
+ - exclude the results, messages and warnings
+
+ - exclude the code from the HTML output
+
+ - render the document and hit the :heavy_check_mark: in zoom
+:::
+
 
 ```{r Libraries}
-#| include: false
+#| include: true
 
-
+# install.packages("pacman") # Install pacman package
+library(pacman) # Load pacman package
+pacman::p_load(ggplot2, patchwork, palmerpenguins)    # Install & load packages
 ```
 
 # 

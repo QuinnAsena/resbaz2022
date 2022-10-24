@@ -245,7 +245,7 @@ In the template Introduction section take 3-4 minutes to write:
 
 ## code blocks
 
-Code is executed when the document is rendered. Code blockss can also be executed individually just like regular R markdown if you are already familiar with that. Code blocks are inserted like this:
+Code is executed when the document is rendered. Code blocks can also be executed individually just like regular R markdown if you are already familiar with that. Code blocks are inserted like this:
 ```{r}
 #| echo: fenced
 #| eval: false
@@ -278,7 +278,7 @@ Inline code execution can be helpful referencing values in text like: there are 
 :::{.callout-tip}
 # Code block exercise
 
-- Check out the [Block options](https://quarto.org/docs/computations/execution-options.html) and edit the existing code block options to:
+- Check out the [Block options](https://quarto.org/docs/computations/execution-options.html) and edit the existing code block options in the 'Libraries section' to:
 
  - display the results
 
