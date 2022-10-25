@@ -15,7 +15,7 @@ theme:
 ---
 
 :::{.callout-tip}
-# YAML exersice
+# YAML exersice (3 minutes)
 - Fill the `title: ` and `name: ` and `affiliation: ` fieds.
 
   - a couple of handy entries are already completed
@@ -32,11 +32,11 @@ theme:
 # Introduction
 
 :::{.callout-tip}
-# Markdown exercise
+# Markdown exercise (5-7 minutes)
 
 - Check out [Quarto's markdown guide](https://quarto.org/docs/authoring/markdown-basics.html)
 
-- and the [biostats guide to writing](https://biostats-r.github.io/biostats/quarto/04-figures-tables.html#equations)
+- and the [biostats guide to writing (equations section)](https://biostats-r.github.io/biostats/quarto/04-figures-tables.html#equations)
 
 In the template Introduction section take 3-4 minutes to write:
 
@@ -53,14 +53,16 @@ In the template Introduction section take 3-4 minutes to write:
 
 # Libraries {.unnumbered .unlisted}
 
-Generally it is good practice to include a list of packages you use up front. But you may not need to show them in the output or list them in the table of contents. The `{.unnumbered .unlisted}` commands following the title remove this section from the table of contents but it will remain in the text. Quarto accepts multiple coding languages, the following example uses R. I have set up working R code chunks so that for this tutorial you do not need to be familiar with R necessarily. The code block options **May be the same...**
+Generally it is good practice to include a list of packages you use up front. But you may not need to show them in the output or list them in the table of contents. The `{.unnumbered .unlisted}` commands following the heading remove this section from the table of contents but it will remain in the text. Quarto accepts multiple coding languages, the following example uses R. I have set up working R code chunks so that for this tutorial you do not need to be familiar with R. Here, we will experiment with a few code [execution options](https://quarto.org/docs/computations/execution-options.html).
+
+
 If you want to use Python code check out the documentation [here](https://quarto.org/docs/computations/python.html#overview).
 
 
 :::{.callout-tip}
-# Code block exercise
+# Code block exercise (5-7 minutes)
 
-- Check out the [Block options](https://quarto.org/docs/computations/execution-options.html) and edit the existing code block options below to:
+- Check out the [Block options](https://quarto.org/docs/computations/execution-options.html) and edit (and add to) the existing code block options below to:
 
  - exclude the results, messages and warnings
 
@@ -78,36 +80,8 @@ library(pacman) # Load pacman package
 pacman::p_load(ggplot2, patchwork, palmerpenguins)    # Install & load packages
 ```
 
-# 
+# Tabsets
 
-# Plots  {.tabset}
-```{r}
-library(ggplot2)
-library(patchwork)
-gg0 <- list()
 
-p1 <- ggplot(mtcars, aes(mpg, hp)) + geom_point()
-p2 <- ggplot(mtcars, aes(mpg, disp)) + geom_point()
-p3 <- ggplot(mtcars, aes(mpg, drat)) + geom_point()
-
-gg0[[1]] <- p1/p1/p1/p1
-gg0[[2]] <- p1/p1/p1/p1/p1/p1
-gg0[[3]] <- p1/p1/p1/p1/p1/p1/p1/p1/p1
-
-headings <- c('hp','disp','drat')
-```
-
-#### Heading
-
-::: {.panel-tabset}
-```{r, results='asis', echo = FALSE}
-for (i in 1:length(gg0)) {
-  cat("##### ",headings[i],"\n")
-  print(gg0[[i]])
-  cat('\n\n')
-}
-```
-
-:::
 
 # References

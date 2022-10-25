@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="You et al">
-<meta name="dcterms.date" content="2022-10-24">
+<meta name="dcterms.date" content="2022-10-25">
 
 <title>Your awesome project title</title>
 <style>
@@ -131,7 +131,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">October 24, 2022</p>
+      <p class="date">October 25, 2022</p>
     </div>
   </div>
     
@@ -146,7 +146,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <i class="callout-icon"></i>
 </div>
 <div class="callout-caption-container flex-fill">
-YAML exersice
+YAML exersice (3 minutes)
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -170,13 +170,13 @@ YAML exersice
 <i class="callout-icon"></i>
 </div>
 <div class="callout-caption-container flex-fill">
-Markdown exercise
+Markdown exercise (5-7 minutes)
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <ul>
 <li><p>Check out <a href="https://quarto.org/docs/authoring/markdown-basics.html">Quarto’s markdown guide</a></p></li>
-<li><p>and the <a href="https://biostats-r.github.io/biostats/quarto/04-figures-tables.html#equations">biostats guide to writing</a></p></li>
+<li><p>and the <a href="https://biostats-r.github.io/biostats/quarto/04-figures-tables.html#equations">biostats guide to writing (equations section)</a></p></li>
 </ul>
 <p>In the template Introduction section take 3-4 minutes to write:</p>
 <ul>
@@ -191,19 +191,20 @@ Markdown exercise
 </section>
 <section id="libraries" class="level1 unnumbered unlisted">
 <h1 class="unnumbered unlisted">Libraries</h1>
-<p>Generally it is good practice to include a list of packages you use up front. But you may not need to show them in the output or list them in the table of contents. The <code>{.unnumbered .unlisted}</code> commands following the title remove this section from the table of contents but it will remain in the text. Quarto accepts multiple coding languages, the following example uses R. I have set up working R code chunks so that for this tutorial you do not need to be familiar with R necessarily. The code block options <strong>May be the same…</strong> If you want to use Python code check out the documentation <a href="https://quarto.org/docs/computations/python.html#overview">here</a>.</p>
+<p>Generally it is good practice to include a list of packages you use up front. But you may not need to show them in the output or list them in the table of contents. The <code>{.unnumbered .unlisted}</code> commands following the heading remove this section from the table of contents but it will remain in the text. Quarto accepts multiple coding languages, the following example uses R. I have set up working R code chunks so that for this tutorial you do not need to be familiar with R. Here, we will experiment with a few code <a href="https://quarto.org/docs/computations/execution-options.html">execution options</a>.</p>
+<p>If you want to use Python code check out the documentation <a href="https://quarto.org/docs/computations/python.html#overview">here</a>.</p>
 <div class="callout-tip callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-caption-container flex-fill">
-Code block exercise
+Code block exercise (5-7 minutes)
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li><p>Check out the <a href="https://quarto.org/docs/computations/execution-options.html">Block options</a> and edit the existing code block options below to:</p></li>
+<li><p>Check out the <a href="https://quarto.org/docs/computations/execution-options.html">Block options</a> and edit (and add to) the existing code block options below to:</p></li>
 <li><p>exclude the results, messages and warnings</p></li>
 <li><p>exclude the code from the HTML output</p></li>
 <li><p>render the document and hit the :heavy_check_mark: in zoom</p></li>
@@ -216,49 +217,8 @@ Code block exercise
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(ggplot2, patchwork, palmerpenguins)    <span class="co"># Install &amp; load packages</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="section" class="level1">
-<h1></h1>
-</section>
-<section id="plots" class="level1 tabset">
-<h1 class="tabset">Plots</h1>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(patchwork)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>gg0 <span class="ot">&lt;-</span> <span class="fu">list</span>()</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(mtcars, <span class="fu">aes</span>(mpg, hp)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(mtcars, <span class="fu">aes</span>(mpg, disp)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>p3 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(mtcars, <span class="fu">aes</span>(mpg, drat)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>gg0[[<span class="dv">1</span>]] <span class="ot">&lt;-</span> p1<span class="sc">/</span>p1<span class="sc">/</span>p1<span class="sc">/</span>p1</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>gg0[[<span class="dv">2</span>]] <span class="ot">&lt;-</span> p1<span class="sc">/</span>p1<span class="sc">/</span>p1<span class="sc">/</span>p1<span class="sc">/</span>p1<span class="sc">/</span>p1</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>gg0[[<span class="dv">3</span>]] <span class="ot">&lt;-</span> p1<span class="sc">/</span>p1<span class="sc">/</span>p1<span class="sc">/</span>p1<span class="sc">/</span>p1<span class="sc">/</span>p1<span class="sc">/</span>p1<span class="sc">/</span>p1<span class="sc">/</span>p1</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>headings <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">'hp'</span>,<span class="st">'disp'</span>,<span class="st">'drat'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<section id="heading" class="level4">
-<h4 class="anchored" data-anchor-id="heading">Heading</h4>
-<div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">hp</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">disp</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false" href="">drat</a></li></ul>
-<div class="tab-content">
-<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<div class="cell-output-display">
-<p><img src="template_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="672"></p>
-</div>
-</div>
-<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<div class="cell-output-display">
-<p><img src="template_files/figure-html/unnamed-chunk-2-2.png" class="img-fluid" width="672"></p>
-</div>
-</div>
-<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
-<div class="cell-output-display">
-<p><img src="template_files/figure-html/unnamed-chunk-2-3.png" class="img-fluid" width="672"></p>
-</div>
-</div>
-</div>
-</div>
-</section>
+<section id="tabsets" class="level1">
+<h1>Tabsets</h1>
 </section>
 <section id="references" class="level1">
 <h1>References</h1>
