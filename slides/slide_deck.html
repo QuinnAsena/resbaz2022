@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.0.37">
 
   <meta name="author" content="Quinn Asena">
-  <meta name="dcterms.date" content="2022-10-25">
+  <meta name="dcterms.date" content="2022-10-26">
   <title>Authoring collaborative research projects using Quarto</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -409,7 +409,7 @@
   <h1 class="title">Authoring collaborative research projects using Quarto</h1>
   <p class="author">Quinn Asena</p>
   <p class="institute">UW-Madison</p>
-  <p class="date">10/25/22</p>
+  <p class="date">10/26/22</p>
 </section>
 
 <section>
@@ -667,9 +667,11 @@ N_{t+1} = N_t + r_{d}N_t \left(1- \frac{N_t}{K} \right)
 <p>Code is executed when the document is rendered. Code blocks can also be executed individually just like regular R markdown if you are already familiar with that. Code blocks are inserted like this:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1"></a><span class="in">```{r}</span></span>
-<span id="cb2-2"><a href="#cb2-2"></a><span class="co">#| eval: false</span></span>
-<span id="cb2-3"><a href="#cb2-3"></a><span class="dv">6</span><span class="sc">*</span><span class="dv">7</span></span>
-<span id="cb2-4"><a href="#cb2-4"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-2"><a href="#cb2-2"></a><span class="dv">6</span><span class="sc">*</span><span class="dv">7</span></span>
+<span id="cb2-3"><a href="#cb2-3"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 42</code></pre>
+</div>
 </div>
 </section>
 <section id="execution-option" class="slide level2">
@@ -692,7 +694,7 @@ N_{t+1} = N_t + r_{d}N_t \left(1- \frac{N_t}{K} \right)
 <section id="inline-code" class="slide level2">
 <h2>inline code</h2>
 <p>Code can also be executed inline:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1"></a>Seven times six is <span class="in">`r 7 * 6`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1"></a>Seven times six is <span class="in">`r 7 * 6`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Inline code execution can be helpful referencing values in text like: there are <code>nrow(data)</code> observations in the data.</p>
 </section>
 <section id="code-exercise" class="slide level2">
@@ -717,34 +719,44 @@ N_{t+1} = N_t + r_{d}N_t \left(1- \frac{N_t}{K} \right)
 </div>
 </div>
 </section>
+<section id="tables" class="slide level2">
+<h2>tables</h2>
+<ul>
+<li><p>Tables can be displayed using code: <a href="https://rstudio.github.io/distill/tables.html">tables in R markdown</a>; or <a href="https://pandoc.org/MANUAL.html#tables">markdown</a>.</p></li>
+<li><p>There are helpful ways of generating markdown tables online: <a href="https://www.tablesgenerator.com/markdown_tables">Markdown table generator</a>; and in <a href="https://rstudio.github.io/visual-markdown-editing/#editor-toolbar">RStudio</a>.</p></li>
+<li><p>An example of generating a table using R is coming up but we won’t go into R specifics today.</p></li>
+</ul>
+</section>
 <section id="tabsets" class="slide level2 scrollable">
 <h2>tabsets</h2>
 <p>Ok now the feature I find <em>very</em> useful: tabsets. Tabsets are great for showing, multiple results, data, code, whatever you want in tabs. Say you want to show the plot on one tab and the model output table in the next, or multiple related plots. Much easier to read and flick among results than a long stream of plots and tables.</p>
-<p>:::{. panel-tabset} # Code</p>
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Code</a></li><li><a href="#tabset-1-2">Data</a></li><li><a href="#tabset-1-3">Plot</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">library</span>(palmerpenguins)</span>
-<span id="cb4-2"><a href="#cb4-2"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb4-3"><a href="#cb4-3"></a><span class="co"># From: https://allisonhorst.github.io/palmerpenguins/articles/examples.html</span></span>
-<span id="cb4-4"><a href="#cb4-4"></a>mass_flipper <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
-<span id="cb4-5"><a href="#cb4-5"></a>                       <span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm,</span>
-<span id="cb4-6"><a href="#cb4-6"></a>                           <span class="at">y =</span> body_mass_g)) <span class="sc">+</span></span>
-<span id="cb4-7"><a href="#cb4-7"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> species,</span>
-<span id="cb4-8"><a href="#cb4-8"></a>                 <span class="at">shape =</span> species),</span>
-<span id="cb4-9"><a href="#cb4-9"></a>             <span class="at">size =</span> <span class="dv">3</span>,</span>
-<span id="cb4-10"><a href="#cb4-10"></a>             <span class="at">alpha =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
-<span id="cb4-11"><a href="#cb4-11"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"darkorange"</span>,<span class="st">"purple"</span>,<span class="st">"cyan4"</span>)) <span class="sc">+</span></span>
-<span id="cb4-12"><a href="#cb4-12"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Flipper length (mm)"</span>,</span>
-<span id="cb4-13"><a href="#cb4-13"></a>       <span class="at">y =</span> <span class="st">"Body mass (g)"</span>,</span>
-<span id="cb4-14"><a href="#cb4-14"></a>       <span class="at">color =</span> <span class="st">"Penguin species"</span>,</span>
-<span id="cb4-15"><a href="#cb4-15"></a>       <span class="at">shape =</span> <span class="st">"Penguin species"</span>) <span class="sc">+</span></span>
-<span id="cb4-16"><a href="#cb4-16"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb4-17"><a href="#cb4-17"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="fu">c</span>(<span class="fl">0.2</span>, <span class="fl">0.7</span>),</span>
-<span id="cb4-18"><a href="#cb4-18"></a>        <span class="at">plot.title.position =</span> <span class="st">"plot"</span>,</span>
-<span id="cb4-19"><a href="#cb4-19"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb5-3"><a href="#cb5-3"></a><span class="co"># From: https://allisonhorst.github.io/palmerpenguins/articles/examples.html</span></span>
+<span id="cb5-4"><a href="#cb5-4"></a>mass_flipper <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
+<span id="cb5-5"><a href="#cb5-5"></a>                       <span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm,</span>
+<span id="cb5-6"><a href="#cb5-6"></a>                           <span class="at">y =</span> body_mass_g)) <span class="sc">+</span></span>
+<span id="cb5-7"><a href="#cb5-7"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> species,</span>
+<span id="cb5-8"><a href="#cb5-8"></a>                 <span class="at">shape =</span> species),</span>
+<span id="cb5-9"><a href="#cb5-9"></a>             <span class="at">size =</span> <span class="dv">3</span>,</span>
+<span id="cb5-10"><a href="#cb5-10"></a>             <span class="at">alpha =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
+<span id="cb5-11"><a href="#cb5-11"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"darkorange"</span>,<span class="st">"purple"</span>,<span class="st">"cyan4"</span>)) <span class="sc">+</span></span>
+<span id="cb5-12"><a href="#cb5-12"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Flipper length (mm)"</span>,</span>
+<span id="cb5-13"><a href="#cb5-13"></a>       <span class="at">y =</span> <span class="st">"Body mass (g)"</span>,</span>
+<span id="cb5-14"><a href="#cb5-14"></a>       <span class="at">color =</span> <span class="st">"Penguin species"</span>,</span>
+<span id="cb5-15"><a href="#cb5-15"></a>       <span class="at">shape =</span> <span class="st">"Penguin species"</span>) <span class="sc">+</span></span>
+<span id="cb5-16"><a href="#cb5-16"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb5-17"><a href="#cb5-17"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="fu">c</span>(<span class="fl">0.2</span>, <span class="fl">0.7</span>),</span>
+<span id="cb5-18"><a href="#cb5-18"></a>        <span class="at">plot.title.position =</span> <span class="st">"plot"</span>,</span>
+<span id="cb5-19"><a href="#cb5-19"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section></section>
-<section id="data" class="title-slide slide level1 center">
-<h1>Data</h1>
+</div>
+<div id="tabset-1-2">
 <div class="cell">
 <div class="cell-output-display">
 
@@ -755,27 +767,75 @@ N_{t+1} = N_t + r_{d}N_t \left(1- \frac{N_t}{K} \right)
 </div>
 </div>
 </div>
-</section>
-
-<section>
-<section id="plot" class="title-slide slide level1 center">
-<h1>Plot</h1>
-
-<img data-src="slide_deck_files/figure-revealjs/unnamed-chunk-4-1.png" alt="Plot of penguin bill length against body mass by species" width="960" class="r-stretch quarto-figure-center"><p class="caption">Flipper length and body mass for Adelie, Chinstrap and Gentoo Penguins</p><p>:::</p>
+</div>
+<div id="tabset-1-3">
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="slide_deck_files/figure-revealjs/unnamed-chunk-4-1.png" alt="Plot of penguin bill length against body mass by species" width="1152"></p>
+<p></p><figcaption>Flipper length and body mass for Adelie, Chinstrap and Gentoo Penguins from <a href="https://allisonhorst.github.io/palmerpenguins/articles/examples.html">Allison Horst</a></figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="tabset-code" class="slide level2">
-<h2>Tabset code</h2>
-<p>Tabsets are created by:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource quarto number-lines code-with-copy"><code class="sourceCode"><span id="cb5-1"><a href="#cb5-1"></a>:::{. panel-tabset}</span>
-<span id="cb5-2"><a href="#cb5-2"></a># Tab 1</span>
-<span id="cb5-3"><a href="#cb5-3"></a>content</span>
-<span id="cb5-4"><a href="#cb5-4"></a></span>
-<span id="cb5-5"><a href="#cb5-5"></a># Tab 2</span>
-<span id="cb5-6"><a href="#cb5-6"></a>content</span>
-<span id="cb5-7"><a href="#cb5-7"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<h2>tabset code</h2>
+<p>Tabsets are created with the following syntax:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource quarto number-lines code-with-copy"><code class="sourceCode"><span id="cb6-1"><a href="#cb6-1"></a>:::{.panel-tabset}</span>
+<span id="cb6-2"><a href="#cb6-2"></a># Tab 1</span>
+<span id="cb6-3"><a href="#cb6-3"></a>content</span>
+<span id="cb6-4"><a href="#cb6-4"></a></span>
+<span id="cb6-5"><a href="#cb6-5"></a># Tab 2</span>
+<span id="cb6-6"><a href="#cb6-6"></a>content</span>
+<span id="cb6-7"><a href="#cb6-7"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-tip callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tabset exercise (3-4 minutes)</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li><p>Check out the <a href="https://quarto.org/docs/interactive/layout.html#tabset-panel">tabset panel documentation</a></p></li>
+<li><p>Create a tabset with three tabs in the template under the Tabsets heading</p>
+<ul>
+<li>Does not matter what they contain but feel free to blurb something in there</li>
+</ul></li>
+<li><p>render the document and hit the <span class="emoji" data-emoji="heavy_check_mark">✔️</span> in zoom</p></li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="images" class="slide level2">
+<h2>images</h2>
+<p>Figures can be generated directly from code as in the tabset panel demonstration or inserted as files using the <code>![caption](pathway/to/img)</code> syntax (for more details like multi-figure layot and alt text see: <a href="https://quarto.org/docs/authoring/figures">figures in Quarto</a>).</p>
+<div class="callout callout-tip callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Images exercise (3 minutes)</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li><p>There is a (royalty free) XKCD comic inside the images directory in the repo. using the syntax described above, insert the image into one of the tabsets you just created.</p></li>
+<li><p>render the document and hit the <span class="emoji" data-emoji="heavy_check_mark">✔️</span> in zoom</p></li>
+</ul>
+</div>
+</div>
+</div>
 </section>
 <section id="letg-go-git-it" class="slide level2">
-<h2>Let’g go Git it</h2>
+<h2>let’g go Git it</h2>
 <p>You’re now ready to host your first live link!</p>
 <div class="callout callout-tip callout-captioned callout-style-default">
 <div class="callout-body">
@@ -796,11 +856,20 @@ N_{t+1} = N_t + r_{d}N_t \left(1- \frac{N_t}{K} \right)
 <ul>
 <li>Settings -&gt; GitHub pages -&gt; enable github pages</li>
 </ul></li>
-<li><p>By default, your link will be hosted at: https://githubusername.github.io/reponame/pathtodocument.html</p></li>
+<li><p>By default, your link will be hosted at: https://githubusername.github.io/reponame/pathtodocument.html</p>
+<ul>
+<li>The repo can remain private but anyone who has the link can view it.</li>
+</ul></li>
+<li><p>Find your hosted template link and share with the world!</p></li>
 </ul>
 </div>
 </div>
 </div>
+</section></section>
+<section>
+<section id="congrats-you-did-it-ง-ʖ-ง" class="title-slide slide level1 center">
+<h1>Congrats you did it (ง ͡❛ ͜ʖ ͡❛)ง</h1>
+
 </section>
 <section id="references" class="slide level2 smaller scrollable">
 <h2>References</h2>

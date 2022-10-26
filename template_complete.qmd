@@ -24,6 +24,16 @@ Some things are the same across projects like well commented code and a well doc
 
 It is good practice to include a list of packages used as well as and source files or functions up front. `{.unnumbered .unnumbered}` will exclude the section from the table of contents.
 
+```{r Libraries}
+#| include: true
+
+# install.packages("pacman") # Install pacman package
+library(pacman) # Load pacman package
+pacman::p_load(ggplot2, patchwork, palmerpenguins)    # Install & load packages
+```
+
+
+
 # Plots  {.tabset}
 ```{r}
 library(ggplot2)
@@ -41,12 +51,12 @@ gg0[[3]] <- p1/p1/p1/p1/p1/p1/p1/p1/p1
 headings <- c('hp','disp','drat')
 ```
 
-#### Heading
+## Heading
 
 ::: {.panel-tabset}
 ```{r, results='asis', echo = FALSE}
 for (i in 1:length(gg0)) {
-  cat("##### ",headings[i],"\n")
+  cat("### ",headings[i],"\n")
   print(gg0[[i]])
   cat('\n\n')
 }

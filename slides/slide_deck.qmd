@@ -248,7 +248,6 @@ In the template Introduction section take 3-4 minutes to write:
 Code is executed when the document is rendered. Code blocks can also be executed individually just like regular R markdown if you are already familiar with that. Code blocks are inserted like this:
 ```{r}
 #| echo: fenced
-#| eval: false
 6*7
 ```
 
@@ -291,12 +290,20 @@ Inline code execution can be helpful referencing values in text like: there are 
  - render the document and hit the :heavy_check_mark: in zoom
 :::
 
+## tables
+
+- Tables can be displayed using code: [tables in R markdown](https://rstudio.github.io/distill/tables.html); or [markdown](https://pandoc.org/MANUAL.html#tables).
+
+- There are helpful ways of generating markdown tables online: [Markdown table generator](https://www.tablesgenerator.com/markdown_tables); and in [RStudio](https://rstudio.github.io/visual-markdown-editing/#editor-toolbar).
+
+- An example of generating a table using R is coming up but we won't go into R specifics today.
+
 
 ## tabsets {.scrollable}
 
 Ok now the feature I find *very* useful: tabsets. Tabsets are great for showing, multiple results, data, code, whatever you want in tabs. Say you want to show the plot on one tab and the model output table in the next, or multiple related plots. Much easier to read and flick among results than a long stream of plots and tables.
 
-:::{. panel-tabset}
+:::{.panel-tabset}
 # Code
 ```{r tabsetPlot}
 #| echo: true
@@ -330,19 +337,20 @@ rmarkdown::paged_table(penguins[1:50,])
 # Plot
 ```{r}
 #| warning: false
-#| fig-cap: Flipper length and body mass for Adelie, Chinstrap and Gentoo Penguins
+#| fig-cap: Flipper length and body mass for Adelie, Chinstrap and Gentoo Penguins from [Allison Horst](https://allisonhorst.github.io/palmerpenguins/articles/examples.html)
 #| fig-alt: Plot of penguin bill length against body mass by species
-
+#| fig-width: 12
+#| fig-height: 10
 mass_flipper
 ```
 :::
 
-## Tabset code
+## tabset code
 
-Tabsets are created by:
+Tabsets are created with the following syntax:
 
 ```quarto
-:::{. panel-tabset}
+:::{.panel-tabset}
 # Tab 1
 content
 
@@ -352,7 +360,31 @@ content
 
 ```
 
-## Let'g go Git it
+:::{.callout-tip}
+# Tabset exercise (3-4 minutes)
+
+- Check out the [tabset panel documentation](https://quarto.org/docs/interactive/layout.html#tabset-panel)
+
+- Create a tabset with three tabs in the template under the Tabsets heading
+
+  - Does not matter what they contain but feel free to blurb something in there
+
+- render the document and hit the :heavy_check_mark: in zoom
+:::
+
+## images
+
+Figures can be generated directly from code as in the tabset panel demonstration or inserted as files using the `![caption](pathway/to/img)` syntax (for more details like multi-figure layot and alt text see: [figures in Quarto](https://quarto.org/docs/authoring/figures)).
+
+:::{.callout-tip}
+# Images exercise (3 minutes)
+
+- There is a (royalty free) XKCD comic inside the images directory in the repo. using the syntax described above, insert the image into one of the tabsets you just created.
+
+- render the document and hit the :heavy_check_mark: in zoom
+:::
+
+## let'g go Git it
 
 You're now ready to host your first live link!
 
@@ -371,8 +403,12 @@ You're now ready to host your first live link!
 
 - By default, your link will be hosted at: https://githubusername.github.io/reponame/pathtodocument.html
 
+  - The repo can remain private but anyone who has the link can view it.
+
+- Find your hosted template link and share with the world!
 :::
 
+# Congrats you did it (ง ͡❛ ͜ʖ ͡❛)ง
 
 ## References
 
