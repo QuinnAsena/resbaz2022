@@ -243,7 +243,6 @@ In the template Introduction section take 3-4 minutes to write:
 - render the document and hit the :heavy_check_mark: in zoom
 :::
 
-
 ## code blocks
 
 Code is executed when the document is rendered. Code blocks can also be executed individually just like regular R markdown if you are already familiar with that. Code blocks are inserted like this:

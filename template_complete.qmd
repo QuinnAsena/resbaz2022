@@ -20,6 +20,26 @@ This template is designed to accompany the slide deck and to include most of the
 
 Some things are the same across projects like well commented code and a well documented version control history. I use documents like this (previously in Rmarkdown) to share results easily with a link hosted on GitHub. Replace this blurb with a summary of your project and any useful links, references and content you desire.
 
+## A note on project structure
+
+Today, we have cloned an existing project structure. It is important that you create a project structure that works for your particular case. A general framework is to create a primary directory that is your repo and contains your `.qmd` script, and sub directories for data, outputs.
+
+- /primary_directory
+
+  - script.qmd
+
+  - .git, .gitignore
+
+  - /data
+
+    - data.csv
+
+  - /outputs
+
+    - results
+
+Plenty of tools exist for reproducibility (such as the `renv` package to record package versions used in your project).
+
 # Packages and libraries {.unlisted}
 
 It is good practice to include a list of packages used as well as and source files or functions up front. `{.unlisted}` will exclude the section from the table of contents. You can hide the section completely with `{.unlisted .hidden}`. This is useful for sections like packages which are included for reproducibility and are necessary to execute as code but maybe unnecessary to display. If your sections are numbered (insert `number-sections: true` in [YAML](https://quarto.org/docs/output-formats/html-basics.html#section-numbering)) then you will need `{.unlisted. unnumbered .hidden}` to hide the section.
@@ -42,8 +62,10 @@ I'm here in spirit, code will still be executed.
 
 # Data wrangling
 
+Typically you need to do some tidying of your data. Each project will have different reqirements e.g., transforming data or generating new datasets. You probably want to dedicate a section just for wrangling but may want to hide it from the output. See [R for Data Science](https://r4ds.had.co.nz/introduction.html) for more info.
 
-# Plots {.tabset}
+
+# Visualisations {.tabset}
 
 Sometimes I have a lot of plots (like, a lot!). Perhaps generated from a loop that outputs a list of related plots. It is possible to programatically generate panel tabsets rather that repeatedly writing out the heading `#` and inserting the plot (e.g., `plot_list[[1]]`). As an example, I've grabbed a couple of plots from [Alison Horst](https://allisonhorst.github.io/palmerpenguins/articles/examples.html) again.
 
@@ -87,6 +109,6 @@ for (i in seq_along(plot_list)) {
 ```
 :::
 
-
-
 # References
+
+References will appear here!
