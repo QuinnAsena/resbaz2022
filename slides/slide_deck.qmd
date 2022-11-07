@@ -16,7 +16,8 @@ format:
     width: 1600
     height: 900
 title-slide-attributes:
-  data-background-color: "#36365a"
+  data-background-color: "#1a1e43"
+#  data-background-color: "#36365a"
 ---
 
 # Quarto for collaborative research
@@ -413,3 +414,5 @@ You're now ready to host your first live link!
 ## References
 
 [Biostats](https://biostats-r.github.io/biostats/quarto/) - very useful resource for authoring documents in Quarto. This session draws from their content.
+
+[Awsome Quarto](https://github.com/mcanouil/awesome-quarto) - a big list of Quarto things.

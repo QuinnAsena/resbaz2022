@@ -20,9 +20,11 @@ This template is designed to accompany the slide deck and to include most of the
 
 Some things are the same across projects like well commented code and a well documented version control history. I use documents like this (previously in Rmarkdown) to share results easily with a link hosted on GitHub. Replace this blurb with a summary of your project and any useful links, references and content you desire.
 
-# Packages and libraries {.unnumbered .unnumbered}
+# Packages and libraries {.unlisted}
 
-It is good practice to include a list of packages used as well as and source files or functions up front. `{.unnumbered .unnumbered}` will exclude the section from the table of contents.
+It is good practice to include a list of packages used as well as and source files or functions up front. `{.unlisted}` will exclude the section from the table of contents. You can hide the section completely with `{.unlisted .hidden}`. This is useful for sections like packages which are included for reproducibility and are necessary to execute as code but maybe unnecessary to display. If your sections are numbered (insert `number-sections: true` in [YAML](https://quarto.org/docs/output-formats/html-basics.html#section-numbering)) then you will need `{.unlisted. unnumbered .hidden}` to hide the section.
+
+I also include individual functions or sourcing scripts of functions in this section.
 
 ```{r Libraries}
 #| include: true
@@ -32,36 +34,59 @@ library(pacman) # Load pacman package
 pacman::p_load(ggplot2, patchwork, palmerpenguins)    # Install & load packages
 ```
 
+# You can't see me! {.unlisted .hidden}
+
+Lah lah lah!
+
+I'm here in spirit, code will still be executed.
+
+# Data wrangling
 
 
-# Plots  {.tabset}
+# Plots {.tabset}
+
+Sometimes I have a lot of plots (like, a lot!). Perhaps generated from a loop that outputs a list of related plots. It is possible to programatically generate panel tabsets rather that repeatedly writing out the heading `#` and inserting the plot (e.g., `plot_list[[1]]`). As an example, I've grabbed a couple of plots from [Alison Horst](https://allisonhorst.github.io/palmerpenguins/articles/examples.html) again.
+
 ```{r}
-library(ggplot2)
-library(patchwork)
-gg0 <- list()
+# Two plots:
+flipper_hist <- ggplot(data = penguins, aes(x = flipper_length_mm)) +
+  geom_histogram(aes(fill = species), alpha = 0.5, position = "identity") +
+  scale_fill_manual(values = c("darkorange","purple","cyan4")) +
+  labs(x = "Flipper length (mm)",
+       y = "Frequency",
+       title = "Penguin flipper lengths")
 
-p1 <- ggplot(mtcars, aes(mpg, hp)) + geom_point()
-p2 <- ggplot(mtcars, aes(mpg, disp)) + geom_point()
-p3 <- ggplot(mtcars, aes(mpg, drat)) + geom_point()
+flipper_box <- ggplot(data = penguins, aes(x = species, y = flipper_length_mm)) +
+  geom_boxplot(aes(color = species), width = 0.3, show.legend = FALSE) +
+  geom_jitter(aes(color = species), alpha = 0.5, show.legend = FALSE, position = position_jitter(width = 0.2, seed = 0)) +
+  scale_color_manual(values = c("darkorange","purple","cyan4")) +
+  labs(x = "Species",
+       y = "Flipper length (mm)")
 
-gg0[[1]] <- p1/p1/p1/p1
-gg0[[2]] <- p1/p1/p1/p1/p1/p1
-gg0[[3]] <- p1/p1/p1/p1/p1/p1/p1/p1/p1
+# Stick them in a list:
+plot_list <- list(Histogram = flipper_hist, Box = flipper_box)
 
-headings <- c('hp','disp','drat')
+# Make some heading names:
+headings <- names(plot_list)
 ```
 
-## Heading
+## Plot tabs
+
+The code might be a little complicated but useful to reduce the length and manual work if you have a lot of outputs.
 
 ::: {.panel-tabset}
 ```{r, results='asis', echo = FALSE}
-for (i in 1:length(gg0)) {
-  cat("### ",headings[i],"\n")
-  print(gg0[[i]])
+#| warning: false
+
+# Use a loop (or lapply, or map, you choose) to generate the headings and insert plots
+for (i in seq_along(plot_list)) {
+  cat("# ",headings[i],"\n")
+  print(plot_list[[i]])
   cat('\n\n')
 }
 ```
-
 :::
+
+
 
 # References
