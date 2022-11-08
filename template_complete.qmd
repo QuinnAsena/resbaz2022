@@ -70,23 +70,14 @@ Typically you need to do some tidying of your data. Each project will have diffe
 Sometimes I have a lot of plots (like, a lot!). Perhaps generated from a loop that outputs a list of related plots. It is possible to programatically generate panel tabsets rather that repeatedly writing out the heading `#` and inserting the plot (e.g., `plot_list[[1]]`). As an example, I've grabbed a couple of plots from [Alison Horst](https://allisonhorst.github.io/palmerpenguins/articles/examples.html) again.
 
 ```{r}
-# Two plots:
-flipper_hist <- ggplot(data = penguins, aes(x = flipper_length_mm)) +
-  geom_histogram(aes(fill = species), alpha = 0.5, position = "identity") +
-  scale_fill_manual(values = c("darkorange","purple","cyan4")) +
-  labs(x = "Flipper length (mm)",
-       y = "Frequency",
-       title = "Penguin flipper lengths")
-
-flipper_box <- ggplot(data = penguins, aes(x = species, y = flipper_length_mm)) +
-  geom_boxplot(aes(color = species), width = 0.3, show.legend = FALSE) +
-  geom_jitter(aes(color = species), alpha = 0.5, show.legend = FALSE, position = position_jitter(width = 0.2, seed = 0)) +
-  scale_color_manual(values = c("darkorange","purple","cyan4")) +
-  labs(x = "Species",
-       y = "Flipper length (mm)")
-
-# Stick them in a list:
-plot_list <- list(Histogram = flipper_hist, Box = flipper_box)
+# A list of plots:
+plot_list <- penguins |>
+  split(penguins$species) |>
+  lapply(function(x){
+    ggplot(x, aes(x = flipper_length_mm, y = body_mass_g)) + 
+      geom_point() +
+      theme_minimal()
+  }) 
 
 # Make some heading names:
 headings <- names(plot_list)
