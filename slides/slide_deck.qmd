@@ -92,7 +92,7 @@ title-slide-attributes:
 
 ## first things first
 
-- Go to https://github.com/QuinnAsena/resbaz2022
+- Go to [the session repo](https://github.com/QuinnAsena/resbaz2022)
 
 - Fork the repository 
 
