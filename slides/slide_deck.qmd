@@ -72,7 +72,7 @@ title-slide-attributes:
 
 ## today's goals
 
-- Learn the necessary components of a Quarto document for HTML
+- Learn the necessary components of a Quarto document to publish an HTML
 
 - Publish an example link on GitHub
 
@@ -223,6 +223,8 @@ VS Code also has cool features:
 
 ## markdown exercise
 
+Your Turn :computer: :
+
 :::{.callout-tip}
 # Markdown exercise (5-7 minutes)
 
@@ -251,14 +253,31 @@ Code is executed when the document is rendered. Code blocks can also be executed
 6*7
 ```
 
-## execution option
+## code block execution option
 
 Code block execution options options are set with a special comment: `#| ` (white space sensitive!). [Block options](https://quarto.org/docs/computations/execution-options.html) determine how the code is executed, e.g., whether to display the code block: `#| echo: true`, warning messages `#| warning: false`, and to input captions `#| fig-cap: "A really good figure caption!"`.
 
 :::{.callout-note}
 # Pro tip!
-Unlike R markdown, block options are lower case true/false and the comment `#| ` must be followed by a space.
+Unlike R markdown, block options are lower case `true`/`false` and the comment `#| ` must be followed by a space.
 :::
+
+## document level execution option
+
+Execution options can also be set at the document level under the YAML entry `execute:`:
+
+```
+execute:
+  echo: false
+  warning: false
+format: 
+  html:
+    fig-width: 8
+    fig-height: 6
+  pdf:
+    fig-width: 7
+    fig-height: 5
+```
 
 ## inline code
 
@@ -276,6 +295,8 @@ Inline code execution can be helpful referencing values in text like: there are 
 
 ## code exercise
 
+Your Turn :computer: :
+
 :::{.callout-tip}
 # Code block exercise (5-7 minutes)
 
@@ -289,6 +310,21 @@ Inline code execution can be helpful referencing values in text like: there are 
 
  - render the document and hit the :heavy_check_mark: in zoom
 :::
+
+## cache
+
+Cache keeps a record of outputs and only re-runs code chunks that have beed edited. Caching is useful for computations that take a long time and do not need to be re-run every time you render the document. Cache can be set at the document level using the YAML entry:
+
+```
+execute:
+  cache: true
+```
+
+or using the ececution option `#| cache: true` in an individual code block.
+
+# Nap time (not really...)! 
+
+Refil on tea, coffee, and cookies.
 
 ## tables
 
@@ -347,9 +383,11 @@ mass_flipper
 
 ## tabset code
 
+Your Turn :computer:
+
 Tabsets are created with the following syntax:
 
-```quarto
+```
 :::{.panel-tabset}
 # Tab 1
 content
@@ -391,7 +429,7 @@ You're now ready to host your first live link!
 :::{.callout-tip}
 # GitHub
 
-- Render your project so that most recent changes are included in the HTML
+- Render your project so that most recent changes are exported
 
 - In the source control on the left commit and push your changes
  

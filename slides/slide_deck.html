@@ -408,7 +408,7 @@
   <h1 class="title">Authoring collaborative research projects using Quarto</h1>
   <p class="author">Quinn Asena</p>
   <p class="institute">UW-Madison</p>
-  <p class="date">11/7/22</p>
+  <p class="date">11/8/22</p>
 </section>
 
 <section>
@@ -470,7 +470,7 @@
 <section id="todays-goals" class="slide level2">
 <h2>today’s goals</h2>
 <ul>
-<li><p>Learn the necessary components of a Quarto document for HTML</p></li>
+<li><p>Learn the necessary components of a Quarto document to publish an HTML</p></li>
 <li><p>Publish an example link on GitHub</p></li>
 <li><p>Have a working template you can use in the future</p></li>
 <li><p>Know where to find help and useful resources</p></li>
@@ -636,6 +636,7 @@ N_{t+1} = N_t + r_{d}N_t \left(1- \frac{N_t}{K} \right)
 </section>
 <section id="markdown-exercise" class="slide level2">
 <h2>markdown exercise</h2>
+<p>Your Turn <span class="emoji" data-emoji="computer">💻</span> :</p>
 <div class="callout callout-tip callout-captioned callout-style-default">
 <div class="callout-body">
 <div class="callout-caption">
@@ -673,8 +674,8 @@ N_{t+1} = N_t + r_{d}N_t \left(1- \frac{N_t}{K} \right)
 </div>
 </div>
 </section>
-<section id="execution-option" class="slide level2">
-<h2>execution option</h2>
+<section id="code-block-execution-option" class="slide level2">
+<h2>code block execution option</h2>
 <p>Code block execution options options are set with a special comment: <code>#|</code> (white space sensitive!). <a href="https://quarto.org/docs/computations/execution-options.html">Block options</a> determine how the code is executed, e.g., whether to display the code block: <code>#| echo: true</code>, warning messages <code>#| warning: false</code>, and to input captions <code>#| fig-cap: "A really good figure caption!"</code>.</p>
 <div class="callout callout-note callout-captioned callout-style-default">
 <div class="callout-body">
@@ -685,19 +686,34 @@ N_{t+1} = N_t + r_{d}N_t \left(1- \frac{N_t}{K} \right)
 <p><strong>Pro tip!</strong></p>
 </div>
 <div class="callout-content">
-<p>Unlike R markdown, block options are lower case true/false and the comment <code>#|</code> must be followed by a space.</p>
+<p>Unlike R markdown, block options are lower case <code>true</code>/<code>false</code> and the comment <code>#|</code> must be followed by a space.</p>
 </div>
 </div>
 </div>
+</section>
+<section id="document-level-execution-option" class="slide level2">
+<h2>document level execution option</h2>
+<p>Execution options can also be set at the document level under the YAML entry <code>execute:</code>:</p>
+<pre><code>execute:
+  echo: false
+  warning: false
+format: 
+  html:
+    fig-width: 8
+    fig-height: 6
+  pdf:
+    fig-width: 7
+    fig-height: 5</code></pre>
 </section>
 <section id="inline-code" class="slide level2">
 <h2>inline code</h2>
 <p>Code can also be executed inline:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1"></a>Seven times six is <span class="in">`r 7 * 6`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1"></a>Seven times six is <span class="in">`r 7 * 6`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Inline code execution can be helpful referencing values in text like: there are <code>nrow(data)</code> observations in the data.</p>
 </section>
 <section id="code-exercise" class="slide level2">
 <h2>code exercise</h2>
+<p>Your Turn <span class="emoji" data-emoji="computer">💻</span> :</p>
 <div class="callout callout-tip callout-captioned callout-style-default">
 <div class="callout-body">
 <div class="callout-caption">
@@ -718,6 +734,18 @@ N_{t+1} = N_t + r_{d}N_t \left(1- \frac{N_t}{K} \right)
 </div>
 </div>
 </section>
+<section id="cache" class="slide level2">
+<h2>cache</h2>
+<p>Cache keeps a record of outputs and only re-runs code chunks that have beed edited. Caching is useful for computations that take a long time and do not need to be re-run every time you render the document. Cache can be set at the document level using the YAML entry:</p>
+<pre><code>execute:
+  cache: true</code></pre>
+<p>or using the ececution option <code>#| cache: true</code> in an individual code block.</p>
+</section></section>
+<section>
+<section id="nap-time-not-really" class="title-slide slide level1 center">
+<h1>Nap time (not really…)!</h1>
+<p>Refil on tea, coffee, and cookies.</p>
+</section>
 <section id="tables" class="slide level2">
 <h2>tables</h2>
 <ul>
@@ -734,25 +762,25 @@ N_{t+1} = N_t + r_{d}N_t \left(1- \frac{N_t}{K} \right)
 <div class="tab-content">
 <div id="tabset-1-1">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">library</span>(palmerpenguins)</span>
-<span id="cb5-2"><a href="#cb5-2"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb5-3"><a href="#cb5-3"></a><span class="co"># From: https://allisonhorst.github.io/palmerpenguins/articles/examples.html</span></span>
-<span id="cb5-4"><a href="#cb5-4"></a>mass_flipper <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
-<span id="cb5-5"><a href="#cb5-5"></a>                       <span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm,</span>
-<span id="cb5-6"><a href="#cb5-6"></a>                           <span class="at">y =</span> body_mass_g)) <span class="sc">+</span></span>
-<span id="cb5-7"><a href="#cb5-7"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> species,</span>
-<span id="cb5-8"><a href="#cb5-8"></a>                 <span class="at">shape =</span> species),</span>
-<span id="cb5-9"><a href="#cb5-9"></a>             <span class="at">size =</span> <span class="dv">3</span>,</span>
-<span id="cb5-10"><a href="#cb5-10"></a>             <span class="at">alpha =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
-<span id="cb5-11"><a href="#cb5-11"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"darkorange"</span>,<span class="st">"purple"</span>,<span class="st">"cyan4"</span>)) <span class="sc">+</span></span>
-<span id="cb5-12"><a href="#cb5-12"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Flipper length (mm)"</span>,</span>
-<span id="cb5-13"><a href="#cb5-13"></a>       <span class="at">y =</span> <span class="st">"Body mass (g)"</span>,</span>
-<span id="cb5-14"><a href="#cb5-14"></a>       <span class="at">color =</span> <span class="st">"Penguin species"</span>,</span>
-<span id="cb5-15"><a href="#cb5-15"></a>       <span class="at">shape =</span> <span class="st">"Penguin species"</span>) <span class="sc">+</span></span>
-<span id="cb5-16"><a href="#cb5-16"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb5-17"><a href="#cb5-17"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="fu">c</span>(<span class="fl">0.2</span>, <span class="fl">0.7</span>),</span>
-<span id="cb5-18"><a href="#cb5-18"></a>        <span class="at">plot.title.position =</span> <span class="st">"plot"</span>,</span>
-<span id="cb5-19"><a href="#cb5-19"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb7-2"><a href="#cb7-2"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb7-3"><a href="#cb7-3"></a><span class="co"># From: https://allisonhorst.github.io/palmerpenguins/articles/examples.html</span></span>
+<span id="cb7-4"><a href="#cb7-4"></a>mass_flipper <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
+<span id="cb7-5"><a href="#cb7-5"></a>                       <span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm,</span>
+<span id="cb7-6"><a href="#cb7-6"></a>                           <span class="at">y =</span> body_mass_g)) <span class="sc">+</span></span>
+<span id="cb7-7"><a href="#cb7-7"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> species,</span>
+<span id="cb7-8"><a href="#cb7-8"></a>                 <span class="at">shape =</span> species),</span>
+<span id="cb7-9"><a href="#cb7-9"></a>             <span class="at">size =</span> <span class="dv">3</span>,</span>
+<span id="cb7-10"><a href="#cb7-10"></a>             <span class="at">alpha =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
+<span id="cb7-11"><a href="#cb7-11"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"darkorange"</span>,<span class="st">"purple"</span>,<span class="st">"cyan4"</span>)) <span class="sc">+</span></span>
+<span id="cb7-12"><a href="#cb7-12"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Flipper length (mm)"</span>,</span>
+<span id="cb7-13"><a href="#cb7-13"></a>       <span class="at">y =</span> <span class="st">"Body mass (g)"</span>,</span>
+<span id="cb7-14"><a href="#cb7-14"></a>       <span class="at">color =</span> <span class="st">"Penguin species"</span>,</span>
+<span id="cb7-15"><a href="#cb7-15"></a>       <span class="at">shape =</span> <span class="st">"Penguin species"</span>) <span class="sc">+</span></span>
+<span id="cb7-16"><a href="#cb7-16"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb7-17"><a href="#cb7-17"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="fu">c</span>(<span class="fl">0.2</span>, <span class="fl">0.7</span>),</span>
+<span id="cb7-18"><a href="#cb7-18"></a>        <span class="at">plot.title.position =</span> <span class="st">"plot"</span>,</span>
+<span id="cb7-19"><a href="#cb7-19"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div id="tabset-1-2">
@@ -784,14 +812,16 @@ N_{t+1} = N_t + r_{d}N_t \left(1- \frac{N_t}{K} \right)
 </section>
 <section id="tabset-code" class="slide level2">
 <h2>tabset code</h2>
+<p>Your Turn <span class="emoji" data-emoji="computer">💻</span></p>
 <p>Tabsets are created with the following syntax:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource quarto number-lines code-with-copy"><code class="sourceCode"><span id="cb6-1"><a href="#cb6-1"></a>:::{.panel-tabset}</span>
-<span id="cb6-2"><a href="#cb6-2"></a># Tab 1</span>
-<span id="cb6-3"><a href="#cb6-3"></a>content</span>
-<span id="cb6-4"><a href="#cb6-4"></a></span>
-<span id="cb6-5"><a href="#cb6-5"></a># Tab 2</span>
-<span id="cb6-6"><a href="#cb6-6"></a>content</span>
-<span id="cb6-7"><a href="#cb6-7"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code>:::{.panel-tabset}
+# Tab 1
+content
+
+# Tab 2
+content
+:::
+</code></pre>
 <div class="callout callout-tip callout-captioned callout-style-default">
 <div class="callout-body">
 <div class="callout-caption">
@@ -846,7 +876,7 @@ N_{t+1} = N_t + r_{d}N_t \left(1- \frac{N_t}{K} \right)
 </div>
 <div class="callout-content">
 <ul>
-<li><p>Render your project so that most recent changes are included in the HTML</p></li>
+<li><p>Render your project so that most recent changes are exported</p></li>
 <li><p>In the source control on the left commit and push your changes</p>
 <ul>
 <li>You can do this however you prefer, commandline, GUI, source control…</li>

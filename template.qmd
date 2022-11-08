@@ -82,7 +82,52 @@ pacman::p_load(ggplot2, patchwork, palmerpenguins)    # Install & load packages
 
 # Tabsets
 
-Your tabset goes here!
+:::{.callout-tip}
+# Tabset exercise (3-4 minutes)
+
+- Check out the [tabset panel documentation](https://quarto.org/docs/interactive/layout.html#tabset-panel)
+
+- Create a tabset with three tabs in the template under the Tabsets heading
+
+  - Does not matter what they contain but feel free to blurb something in there
+
+- render the document and hit the :heavy_check_mark: in zoom
+:::
+
+# Images
+
+:::{.callout-tip}
+# Images exercise (3 minutes)
+
+- There is a (royalty free) XKCD comic inside the images directory in the repo. using the syntax described above, insert the image into one of the tabsets you just created.
+
+- render the document and hit the :heavy_check_mark: in zoom
+:::
+
+
+## let'g go Git it
+
+You're now ready to host your first live link!
+
+:::{.callout-tip}
+# GitHub
+
+- Render your project so that most recent changes are exported
+
+- In the source control on the left commit and push your changes
+ 
+  - You can do this however you prefer, commandline, GUI, source control...
+
+- Head over to GitHub in your browser and go:
+
+  - Settings -> GitHub pages -> enable github pages
+
+- By default, your link will be hosted at: https://githubusername.github.io/reponame/pathtodocument.html
+
+  - The repo can remain private but anyone who has the link can view it.
+
+- Find your hosted template link and share with the world!
+:::
 
 # References
 

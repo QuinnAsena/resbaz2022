@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Quinn Asena">
-<meta name="dcterms.date" content="2022-11-07">
+<meta name="dcterms.date" content="2022-11-08">
 
 <title>Example</title>
 <style>
@@ -116,6 +116,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <ul class="collapse">
   <li><a href="#plot-tabs" id="toc-plot-tabs" class="nav-link" data-scroll-target="#plot-tabs">Plot tabs</a></li>
   </ul></li>
+  <li><a href="#to-do" id="toc-to-do" class="nav-link" data-scroll-target="#to-do">To do</a></li>
+  <li><a href="#final-remarks" id="toc-final-remarks" class="nav-link" data-scroll-target="#final-remarks">Final remarks</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
 </nav>
@@ -148,7 +150,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">November 7, 2022</p>
+      <p class="date">November 8, 2022</p>
     </div>
   </div>
     
@@ -159,8 +161,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <section id="introduction" class="level1">
 <h1>Introduction</h1>
-<p>This template is designed to accompany the slide deck and to include most of the features you will need to use for hosting a collaborative research project. I’ve included a few extras that I find handy (e.g., YAML entries, and check out the plot loop!). Every research project needs to be taylored towards your collaborators, data, data privacy, and the list goes on.</p>
-<p>Some things are the same across projects like well commented code and a well documented version control history. I use documents like this (previously in Rmarkdown) to share results easily with a link hosted on GitHub. Replace this blurb with a summary of your project and any useful links, references and content you desire.</p>
+<p>This template is designed to accompany the slide deck and to include most of the features you will need for hosting a collaborative research project. I’ve included a few extras that I find handy (e.g., YAML entries, and check out the plot loop!). Every research project needs to be taylored towards your preferred workflow, collaborators, data, data privacy, and the list goes on.</p>
+<p>Some things are the same across projects like well commented code and a well documented version control history. I use documents like this (previously in Rmarkdown) to share results easily with a link hosted on GitHub.</p>
+<p>This complete template has a structure that many projects roughly follow from intro inforation to colaborators through some data wrangling and visualisations.You can replace ths intro (and following sub-section) with a summary of your project and any useful links, references and content you desire.</p>
 <section id="a-note-on-project-structure" class="level2">
 <h2 class="anchored" data-anchor-id="a-note-on-project-structure">A note on project structure</h2>
 <p>Today, we have cloned an existing project structure. It is important that you create a project structure that works for your particular case. A general framework is to create a primary directory that is your repo and contains your <code>.qmd</code> script, and sub directories for data, outputs.</p>
@@ -184,8 +187,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="packages-and-libraries" class="level1 unlisted">
 <h1 class="unlisted">Packages and libraries</h1>
-<p>It is good practice to include a list of packages used as well as and source files or functions up front. <code>{.unlisted}</code> will exclude the section from the table of contents. You can hide the section completely with <code>{.unlisted .hidden}</code>. This is useful for sections like packages which are included for reproducibility and are necessary to execute as code but maybe unnecessary to display. If your sections are numbered (insert <code>number-sections: true</code> in <a href="https://quarto.org/docs/output-formats/html-basics.html#section-numbering">YAML</a>) then you will need <code>{.unlisted. unnumbered .hidden}</code> to hide the section.</p>
-<p>I also include individual functions or sourcing scripts of functions in this section.</p>
+<p>It is good practice to include a list of packages used as well as any source files or functions up front. <code>{.unlisted}</code> will exclude the section from the table of contents. You can hide the section completely with <code>{.unlisted .hidden}</code>. This is useful for sections like ‘packages’ which are included in the code for reproducibility and are necessary to execute but maybe unnecessary to display. If your sections are numbered (insert <code>number-sections: true</code> in <a href="https://quarto.org/docs/output-formats/html-basics.html#section-numbering">YAML</a>) then you will need <code>{.unlisted. unnumbered .hidden}</code> to hide the section.</p>
+<p>You might also include sourcing any function scripts (e.g., <code>source("my_functions.R")</code>).</p>
 <div class="cell">
 <details>
 <summary>Code</summary>
@@ -251,6 +254,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 </section>
+</section>
+<section id="to-do" class="level1">
+<h1>To do</h1>
+<p>I sometimes keep a project to-do list here</p>
+<ul class="task-list">
+<li><p><input type="checkbox" disabled="" checked="">
+Get up</p></li>
+<li><p><input type="checkbox" disabled="" checked="">
+Put on pants</p></li>
+<li><p><input type="checkbox" disabled="">
+Present workshop</p></li>
+</ul>
+</section>
+<section id="final-remarks" class="level1">
+<h1>Final remarks</h1>
+<p>This workshop is primarily designed to introduce you to tools and useful features in Quarto. Regardless of your workflow (which this template may not fit!), hopefully you will have the tools to make sharing results and colaborating with supervisors and researchers much easier.</p>
 </section>
 <section id="references" class="level1">
 <h1>References</h1>

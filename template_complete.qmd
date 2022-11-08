@@ -16,9 +16,11 @@ theme:
 
 # Introduction
 
-This template is designed to accompany the slide deck and to include most of the features you will need to use for hosting a collaborative research project. I've included a few extras that I find handy (e.g., YAML entries, and check out the plot loop!). Every research project needs to be taylored towards your collaborators, data, data privacy, and the list goes on.
+This template is designed to accompany the slide deck and to include most of the features you will need for hosting a collaborative research project. I've included a few extras that I find handy (e.g., YAML entries, and check out the plot loop!). Every research project needs to be taylored towards your preferred workflow, collaborators, data, data privacy, and the list goes on.
 
-Some things are the same across projects like well commented code and a well documented version control history. I use documents like this (previously in Rmarkdown) to share results easily with a link hosted on GitHub. Replace this blurb with a summary of your project and any useful links, references and content you desire.
+Some things are the same across projects like well commented code and a well documented version control history. I use documents like this (previously in Rmarkdown) to share results easily with a link hosted on GitHub. 
+
+This complete template has a structure that many projects roughly follow from intro inforation to colaborators through some data wrangling and visualisations.You can replace ths intro (and following sub-section) with a summary of your project and any useful links, references and content you desire.
 
 ## A note on project structure
 
@@ -42,13 +44,11 @@ Plenty of tools exist for reproducibility (such as the `renv` package to record 
 
 # Packages and libraries {.unlisted}
 
-It is good practice to include a list of packages used as well as and source files or functions up front. `{.unlisted}` will exclude the section from the table of contents. You can hide the section completely with `{.unlisted .hidden}`. This is useful for sections like packages which are included for reproducibility and are necessary to execute as code but maybe unnecessary to display. If your sections are numbered (insert `number-sections: true` in [YAML](https://quarto.org/docs/output-formats/html-basics.html#section-numbering)) then you will need `{.unlisted. unnumbered .hidden}` to hide the section.
+It is good practice to include a list of packages used as well as any source files or functions up front. `{.unlisted}` will exclude the section from the table of contents. You can hide the section completely with `{.unlisted .hidden}`. This is useful for sections like 'packages' which are included in the code for reproducibility and are necessary to execute but maybe unnecessary to display. If your sections are numbered (insert `number-sections: true` in [YAML](https://quarto.org/docs/output-formats/html-basics.html#section-numbering)) then you will need `{.unlisted. unnumbered .hidden}` to hide the section.
 
-I also include individual functions or sourcing scripts of functions in this section.
+You might also include sourcing any function scripts (e.g., `source("my_functions.R")`).
 
 ```{r Libraries}
-#| include: true
-
 # install.packages("pacman") # Install pacman package
 library(pacman) # Load pacman package
 pacman::p_load(ggplot2, patchwork, palmerpenguins)    # Install & load packages
@@ -108,6 +108,20 @@ for (i in seq_along(plot_list)) {
 }
 ```
 :::
+
+# To do
+
+I sometimes keep a project to-do list here
+
+- [x] Get up
+
+- [x] Put on pants
+
+- [ ] Present workshop
+
+# Final remarks
+
+This workshop is primarily designed to introduce you to tools and useful features in Quarto. Regardless of your workflow (which this template may not fit!), hopefully you will have the tools to make sharing results and colaborating with supervisors and researchers much easier.
 
 # References
 
