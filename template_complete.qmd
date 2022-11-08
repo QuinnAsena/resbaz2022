@@ -6,7 +6,7 @@ author:
 date: today
 format:
   html:
-    code-fold: true
+    code-fold: false
     toc: true
     link-external-newwindow: true
 theme:
@@ -87,8 +87,8 @@ headings <- names(plot_list)
 
 The code might be a little complicated but useful to reduce the length and manual work if you have a lot of outputs.
 
-::: {.panel-tabset}
-```{r, results='asis', echo = FALSE}
+:::{.panel-tabset}
+```{r, results='asis'}
 #| warning: false
 
 # Use a loop (or lapply, or map, you choose) to generate the headings and insert plots
