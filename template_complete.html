@@ -190,12 +190,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>It is good practice to include a list of packages used as well as any source files or functions up front. <code>{.unlisted}</code> will exclude the section from the table of contents. You can hide the section completely with <code>{.unlisted .hidden}</code>. This is useful for sections like ‘packages’ which are included in the code for reproducibility and are necessary to execute but maybe unnecessary to display. If your sections are numbered (insert <code>number-sections: true</code> in <a href="https://quarto.org/docs/output-formats/html-basics.html#section-numbering">YAML</a>) then you will need <code>{.unlisted. unnumbered .hidden}</code> to hide the section.</p>
 <p>You might also include sourcing any function scripts (e.g., <code>source("my_functions.R")</code>).</p>
 <div class="cell">
-<details>
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("pacman") # Install pacman package</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(pacman) <span class="co"># Load pacman package</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(ggplot2, patchwork, palmerpenguins)    <span class="co"># Install &amp; load packages</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
 </section>
 <section id="you-cant-see-me" class="level1 unlisted hidden">
@@ -211,8 +208,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1 class="tabset">Visualisations</h1>
 <p>Sometimes I have a lot of plots (like, a lot!). Perhaps generated from a loop that outputs a list of related plots. It is possible to programatically generate panel tabsets rather that repeatedly writing out the heading <code>#</code> and inserting the plot (e.g., <code>plot_list[[1]]</code>). As an example, I’ve grabbed a couple of plots from <a href="https://allisonhorst.github.io/palmerpenguins/articles/examples.html">Alison Horst</a> again.</p>
 <div class="cell">
-<details>
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># A list of plots:</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>plot_list <span class="ot">&lt;-</span> penguins <span class="sc">|&gt;</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">split</span>(penguins<span class="sc">$</span>species) <span class="sc">|&gt;</span></span>
@@ -224,7 +219,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Make some heading names:</span></span>
 <span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>headings <span class="ot">&lt;-</span> <span class="fu">names</span>(plot_list)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
 <section id="plot-tabs" class="level2">
 <h2 class="anchored" data-anchor-id="plot-tabs">Plot tabs</h2>

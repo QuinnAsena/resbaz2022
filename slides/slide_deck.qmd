@@ -92,10 +92,13 @@ title-slide-attributes:
 
 ## first things first
 
-- Open up VS Code and navigate to the source control
-  - Clone the repo: https://github.com/QuinnAsena/resbaz2022.git
+- Go to https://github.com/QuinnAsena/resbaz2022
 
-- Publish repo to your own GitHub account
+- Fork the repository 
+
+- Open up VS Code and navigate to the source control
+
+  - Clone https://github.com/username/resbaz2022
 
 - Open up the template.qmd file
 
