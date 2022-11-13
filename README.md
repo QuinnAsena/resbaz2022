@@ -21,3 +21,5 @@ Before the session install:
   - VS Code Extensions (install in the extensions tab in VS Code or click install on the web pages below):
     - [R](https://marketplace.visualstudio.com/items?itemName=REditorSupport.r)
     - [Quarto](https://marketplace.visualstudio.com/items?itemName=quarto.quarto)
+
+If you already have any of the above installed please update to the latest versions.

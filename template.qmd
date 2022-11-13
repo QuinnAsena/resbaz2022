@@ -75,9 +75,8 @@ If you want to use Python code check out the documentation [here](https://quarto
 ```{r Libraries}
 #| include: true
 
-# install.packages("pacman") # Install pacman package
-library(pacman) # Load pacman package
-pacman::p_load(ggplot2, patchwork, palmerpenguins)    # Install & load packages
+install.packages("pacman", repos="http://cran.r-project.org") # Install pacman package
+pacman::p_load(ggplot2, palmerpenguins)    # Install & load packages
 ```
 
 # Tabsets
