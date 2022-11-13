@@ -22,6 +22,8 @@ title-slide-attributes:
 
 # Quarto for collaborative research
 
+[Link to slides](https://quinnasena.github.io/resbaz2022/slides/slide_deck.html#/title-slide)
+
 ## why geek out on Quarto?
 
 - [This is why!](https://quinnasena.github.io/resbaz2022/template_complete.html)
@@ -346,9 +348,8 @@ Ok now the feature I find *very* useful: tabsets. Tabsets are great for showing,
 # Code
 ```{r tabsetPlot}
 #| echo: true
-
-library(palmerpenguins)
-library(ggplot2)
+install.packages("pacman", repos="http://cran.r-project.org") # Install pacman package
+pacman::p_load(ggplot2, palmerpenguins)    # Install & load packages
 # From: https://allisonhorst.github.io/palmerpenguins/articles/examples.html
 mass_flipper <- ggplot(data = penguins,
                        aes(x = flipper_length_mm,

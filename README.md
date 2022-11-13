@@ -21,4 +21,5 @@ Before the session install:
   - VS Code Extensions (install in the extensions tab in VS Code):
     - R
     - Quarto
-    - Git
+
+If you already have any of the above installed please update to the latest versions.
