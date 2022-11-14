@@ -49,7 +49,8 @@ It is good practice to include a list of packages used as well as any source fil
 You might also include sourcing any function scripts (e.g., `source("my_functions.R")`).
 
 ```{r Libraries}
-install.packages("pacman", repos="http://cran.r-project.org") # Install pacman package
+#| include: false
+if (!require("pacman")) install.packages("pacman", repos="http://cran.r-project.org")
 pacman::p_load(ggplot2, palmerpenguins)    # Install & load packages
 ```
 

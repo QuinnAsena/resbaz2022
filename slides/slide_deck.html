@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.0.38">
 
   <meta name="author" content="Quinn Asena">
-  <meta name="dcterms.date" content="2022-11-11">
+  <meta name="dcterms.date" content="2022-11-13">
   <title>Authoring collaborative research projects using Quarto</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -409,13 +409,13 @@
   <h1 class="title">Authoring collaborative research projects using Quarto</h1>
   <p class="author">Quinn Asena</p>
   <p class="institute">UW-Madison</p>
-  <p class="date">11/11/22</p>
+  <p class="date">11/13/22</p>
 </section>
 
 <section>
 <section id="quarto-for-collaborative-research" class="title-slide slide level1 center">
 <h1>Quarto for collaborative research</h1>
-
+<p><a href="https://quinnasena.github.io/resbaz2022/slides/slide_deck.html#/title-slide">Link to slides</a></p>
 </section>
 <section id="why-geek-out-on-quarto" class="slide level2">
 <h2>why geek out on Quarto?</h2>
@@ -483,7 +483,6 @@
 <li><p>Camera optional, but we love to see you (really, it helps me a lot!)</p></li>
 <li><p>During exercises, give me a <span class="emoji" data-emoji="heavy_check_mark">✔️</span> when you are done or a <span class="emoji" data-emoji="hand">✋</span> if you need help</p></li>
 <li><p>Drop questions in the Zoom chat or raise a hand at any time</p></li>
-<li><p>We support inclusivity and a positive environment through the Code of Conduct</p></li>
 </ul>
 </section>
 <section id="first-things-first" class="slide level2">
@@ -495,7 +494,7 @@
 <ul>
 <li>Clone https://github.com/username/resbaz2022</li>
 </ul></li>
-<li><p>Open up the template.qmd file</p></li>
+<li><p>Open up the install.R and template.qmd files</p></li>
 </ul>
 <div class="callout callout-note callout-captioned callout-style-default">
 <div class="callout-body">
@@ -550,7 +549,7 @@
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>YAML exersice (3 minutes)</strong></p>
+<p><strong>YAML exersice</strong></p>
 </div>
 <div class="callout-content">
 <ul>
@@ -587,6 +586,7 @@
 </div>
 <div class="callout-content">
 <p>Render regularly. Small errors can be tricky to pick out long after they have been made.</p>
+<p>You can change the defult so that the document renders on hitting save.</p>
 </div>
 </div>
 </div>
@@ -605,6 +605,19 @@
 <li>Useful for authoring articles as <code>CSL</code> files are <a href="https://github.com/citation-style-language/styles">downloadable for specific journals</a></li>
 </ul></li>
 </ul>
+<div class="callout callout-note callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Pro tip!</strong></p>
+</div>
+<div class="callout-content">
+<p>There are alternative methods that do not require a local file, like <a href="https://www.citedrive.com/">CiteDrive</a>.</p>
+</div>
+</div>
+</div>
 </section>
 <section id="in-text-citations" class="slide level2">
 <h2>in-text citations</h2>
@@ -645,7 +658,7 @@ N_{t+1} = N_t + r_{d}N_t \left(1- \frac{N_t}{K} \right)
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Markdown exercise (5-7 minutes)</strong></p>
+<p><strong>Markdown exercise</strong></p>
 </div>
 <div class="callout-content">
 <ul>
@@ -722,7 +735,7 @@ format:
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Code block exercise (5-7 minutes)</strong></p>
+<p><strong>Code block exercise</strong></p>
 </div>
 <div class="callout-content">
 <ul>
@@ -764,31 +777,25 @@ format:
 <div class="tab-content">
 <div id="tabset-1-1">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">install.packages</span>(<span class="st">"pacman"</span>, <span class="at">repos=</span><span class="st">"http://cran.r-project.org"</span>) <span class="co"># Install pacman package</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>package 'pacman' successfully unpacked and MD5 sums checked
-
-The downloaded binary packages are in
-    C:\Users\qase352\AppData\Local\Temp\RtmpiKBJBV\downloaded_packages</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(ggplot2, palmerpenguins)    <span class="co"># Install &amp; load packages</span></span>
-<span id="cb9-2"><a href="#cb9-2"></a><span class="co"># From: https://allisonhorst.github.io/palmerpenguins/articles/examples.html</span></span>
-<span id="cb9-3"><a href="#cb9-3"></a>mass_flipper <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
-<span id="cb9-4"><a href="#cb9-4"></a>                       <span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm,</span>
-<span id="cb9-5"><a href="#cb9-5"></a>                           <span class="at">y =</span> body_mass_g)) <span class="sc">+</span></span>
-<span id="cb9-6"><a href="#cb9-6"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> species,</span>
-<span id="cb9-7"><a href="#cb9-7"></a>                 <span class="at">shape =</span> species),</span>
-<span id="cb9-8"><a href="#cb9-8"></a>             <span class="at">size =</span> <span class="dv">3</span>,</span>
-<span id="cb9-9"><a href="#cb9-9"></a>             <span class="at">alpha =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
-<span id="cb9-10"><a href="#cb9-10"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"darkorange"</span>,<span class="st">"purple"</span>,<span class="st">"cyan4"</span>)) <span class="sc">+</span></span>
-<span id="cb9-11"><a href="#cb9-11"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Flipper length (mm)"</span>,</span>
-<span id="cb9-12"><a href="#cb9-12"></a>       <span class="at">y =</span> <span class="st">"Body mass (g)"</span>,</span>
-<span id="cb9-13"><a href="#cb9-13"></a>       <span class="at">color =</span> <span class="st">"Penguin species"</span>,</span>
-<span id="cb9-14"><a href="#cb9-14"></a>       <span class="at">shape =</span> <span class="st">"Penguin species"</span>) <span class="sc">+</span></span>
-<span id="cb9-15"><a href="#cb9-15"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb9-16"><a href="#cb9-16"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="fu">c</span>(<span class="fl">0.2</span>, <span class="fl">0.7</span>),</span>
-<span id="cb9-17"><a href="#cb9-17"></a>        <span class="at">plot.title.position =</span> <span class="st">"plot"</span>,</span>
-<span id="cb9-18"><a href="#cb9-18"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">"pacman"</span>)) <span class="fu">install.packages</span>(<span class="st">"pacman"</span>, <span class="at">repos=</span><span class="st">"http://cran.r-project.org"</span>)</span>
+<span id="cb7-2"><a href="#cb7-2"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(ggplot2, palmerpenguins)    <span class="co"># Install &amp; load packages</span></span>
+<span id="cb7-3"><a href="#cb7-3"></a><span class="co"># From: https://allisonhorst.github.io/palmerpenguins/articles/examples.html</span></span>
+<span id="cb7-4"><a href="#cb7-4"></a>mass_flipper <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
+<span id="cb7-5"><a href="#cb7-5"></a>                       <span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm,</span>
+<span id="cb7-6"><a href="#cb7-6"></a>                           <span class="at">y =</span> body_mass_g)) <span class="sc">+</span></span>
+<span id="cb7-7"><a href="#cb7-7"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> species,</span>
+<span id="cb7-8"><a href="#cb7-8"></a>                 <span class="at">shape =</span> species),</span>
+<span id="cb7-9"><a href="#cb7-9"></a>             <span class="at">size =</span> <span class="dv">3</span>,</span>
+<span id="cb7-10"><a href="#cb7-10"></a>             <span class="at">alpha =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
+<span id="cb7-11"><a href="#cb7-11"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"darkorange"</span>,<span class="st">"purple"</span>,<span class="st">"cyan4"</span>)) <span class="sc">+</span></span>
+<span id="cb7-12"><a href="#cb7-12"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Flipper length (mm)"</span>,</span>
+<span id="cb7-13"><a href="#cb7-13"></a>       <span class="at">y =</span> <span class="st">"Body mass (g)"</span>,</span>
+<span id="cb7-14"><a href="#cb7-14"></a>       <span class="at">color =</span> <span class="st">"Penguin species"</span>,</span>
+<span id="cb7-15"><a href="#cb7-15"></a>       <span class="at">shape =</span> <span class="st">"Penguin species"</span>) <span class="sc">+</span></span>
+<span id="cb7-16"><a href="#cb7-16"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb7-17"><a href="#cb7-17"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="fu">c</span>(<span class="fl">0.2</span>, <span class="fl">0.7</span>),</span>
+<span id="cb7-18"><a href="#cb7-18"></a>        <span class="at">plot.title.position =</span> <span class="st">"plot"</span>,</span>
+<span id="cb7-19"><a href="#cb7-19"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div id="tabset-1-2">
@@ -836,7 +843,7 @@ content
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Tabset exercise (3-4 minutes)</strong></p>
+<p><strong>Tabset exercise</strong></p>
 </div>
 <div class="callout-content">
 <ul>
@@ -860,7 +867,7 @@ content
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Images exercise (3 minutes)</strong></p>
+<p><strong>Images exercise</strong></p>
 </div>
 <div class="callout-content">
 <ul>

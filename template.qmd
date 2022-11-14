@@ -15,7 +15,7 @@ theme:
 ---
 
 :::{.callout-tip}
-# YAML exersice (3 minutes)
+# YAML exersice
 - Fill the `title: ` and `name: ` and `affiliation: ` fieds.
 
   - a couple of handy entries are already completed
@@ -32,7 +32,7 @@ theme:
 # Introduction
 
 :::{.callout-tip}
-# Markdown exercise (5-7 minutes)
+# Markdown exercise
 
 - Check out [Quarto's markdown guide](https://quarto.org/docs/authoring/markdown-basics.html)
 
@@ -60,7 +60,7 @@ If you want to use Python code check out the documentation [here](https://quarto
 
 
 :::{.callout-tip}
-# Code block exercise (5-7 minutes)
+# Code block exercise
 
 - Check out the [Block options](https://quarto.org/docs/computations/execution-options.html) and edit (and add to) the existing code block options below to:
 
@@ -75,14 +75,14 @@ If you want to use Python code check out the documentation [here](https://quarto
 ```{r Libraries}
 #| include: true
 
-install.packages("pacman", repos="http://cran.r-project.org") # Install pacman package
+if (!require("pacman")) install.packages("pacman", repos="http://cran.r-project.org")
 pacman::p_load(ggplot2, palmerpenguins)    # Install & load packages
 ```
 
 # Tabsets
 
 :::{.callout-tip}
-# Tabset exercise (3-4 minutes)
+# Tabset exercise
 
 - Check out the [tabset panel documentation](https://quarto.org/docs/interactive/layout.html#tabset-panel)
 
@@ -96,7 +96,7 @@ pacman::p_load(ggplot2, palmerpenguins)    # Install & load packages
 # Images
 
 :::{.callout-tip}
-# Images exercise (3 minutes)
+# Images exercise
 
 - There is a (royalty free) XKCD comic inside the images directory in the repo. using the syntax described above, insert the image into one of the tabsets you just created.
 

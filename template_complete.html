@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Quinn Asena">
-<meta name="dcterms.date" content="2022-11-11">
+<meta name="dcterms.date" content="2022-11-13">
 
 <title>Example</title>
 <style>
@@ -150,7 +150,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">November 11, 2022</p>
+      <p class="date">November 13, 2022</p>
     </div>
   </div>
     
@@ -189,20 +189,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1 class="unlisted">Packages and libraries</h1>
 <p>It is good practice to include a list of packages used as well as any source files or functions up front. <code>{.unlisted}</code> will exclude the section from the table of contents. You can hide the section completely with <code>{.unlisted .hidden}</code>. This is useful for sections like ‘packages’ which are included in the code for reproducibility and are necessary to execute but maybe unnecessary to display. If your sections are numbered (insert <code>number-sections: true</code> in <a href="https://quarto.org/docs/output-formats/html-basics.html#section-numbering">YAML</a>) then you will need <code>{.unlisted. unnumbered .hidden}</code> to hide the section.</p>
 <p>You might also include sourcing any function scripts (e.g., <code>source("my_functions.R")</code>).</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"pacman"</span>, <span class="at">repos=</span><span class="st">"http://cran.r-project.org"</span>) <span class="co"># Install pacman package</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Installing package into 'C:/Users/qase352/AppData/Local/R/win-library/4.2'
-(as 'lib' is unspecified)</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>package 'pacman' successfully unpacked and MD5 sums checked
-
-The downloaded binary packages are in
-    C:\Users\qase352\AppData\Local\Temp\Rtmpot9sMR\downloaded_packages</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(ggplot2, palmerpenguins)    <span class="co"># Install &amp; load packages</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
 </section>
 <section id="you-cant-see-me" class="level1 unlisted hidden">
 <h1 class="unlisted hidden">You can’t see me!</h1>
@@ -217,17 +203,17 @@ The downloaded binary packages are in
 <h1 class="tabset">Visualisations</h1>
 <p>Sometimes I have a lot of plots (like, a lot!). Perhaps generated from a loop that outputs a list of related plots. It is possible to programatically generate panel tabsets rather that repeatedly writing out the heading <code>#</code> and inserting the plot (e.g., <code>plot_list[[1]]</code>). As an example, I’ve grabbed a couple of plots from <a href="https://allisonhorst.github.io/palmerpenguins/articles/examples.html">Alison Horst</a> again.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># A list of plots:</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>plot_list <span class="ot">&lt;-</span> penguins <span class="sc">|&gt;</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">split</span>(penguins<span class="sc">$</span>species) <span class="sc">|&gt;</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">lapply</span>(<span class="cf">function</span>(x){</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(x, <span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm, <span class="at">y =</span> body_mass_g)) <span class="sc">+</span> </span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>      <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>      <span class="fu">theme_minimal</span>()</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  }) </span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Make some heading names:</span></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>headings <span class="ot">&lt;-</span> <span class="fu">names</span>(plot_list)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># A list of plots:</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>plot_list <span class="ot">&lt;-</span> penguins <span class="sc">|&gt;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">split</span>(penguins<span class="sc">$</span>species) <span class="sc">|&gt;</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">lapply</span>(<span class="cf">function</span>(x){</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(x, <span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm, <span class="at">y =</span> body_mass_g)) <span class="sc">+</span> </span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>      <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>      <span class="fu">theme_minimal</span>()</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  }) </span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Make some heading names:</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>headings <span class="ot">&lt;-</span> <span class="fu">names</span>(plot_list)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <section id="plot-tabs" class="level2">
 <h2 class="anchored" data-anchor-id="plot-tabs">Plot tabs</h2>

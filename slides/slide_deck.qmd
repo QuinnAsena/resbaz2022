@@ -90,8 +90,6 @@ title-slide-attributes:
 
 - Drop questions in the Zoom chat or raise a hand at any time
 
-- We support inclusivity and a positive environment through the Code of Conduct
-
 ## first things first
 
 - Go to [the session repo](https://github.com/QuinnAsena/resbaz2022)
@@ -102,7 +100,7 @@ title-slide-attributes:
 
   - Clone https://github.com/username/resbaz2022
 
-- Open up the template.qmd file
+- Open up the install.R and template.qmd files
 
 :::{.callout-note}
 We are using VS Code, R, and GitHub. If you have a preferred workflow like RStudio, Python, or GitKraken you can use them but may be harder to follow the session content. Afterall, Quarto is supposed to be flexible!
@@ -149,7 +147,7 @@ date: today
 Your Turn :computer: :
 
 :::{.callout-tip}
-# YAML exersice (3 minutes)
+# YAML exersice
 - Open up the template.qmd and fill the `title: ` and `name: ` and `affiliation: ` fieds.
 
   - A couple of handy entries are already completed
@@ -175,6 +173,8 @@ Your Turn :computer: :
 :::{.callout-note}
 # Pro tip!
 Render regularly. Small errors can be tricky to pick out long after they have been made.
+
+You can change the defult so that the document renders on hitting save.
 :::
 
 
@@ -191,6 +191,11 @@ Citations require:
 - an optional `CSL` file specifying the format of the bibliography.
 
   - Useful for authoring articles as `CSL` files are [downloadable for specific journals](https://github.com/citation-style-language/styles)
+
+:::{.callout-note}
+# Pro tip!
+There are alternative methods that do not require a local file, like [CiteDrive](https://www.citedrive.com/).
+:::
 
 ## in-text citations
 
@@ -231,7 +236,7 @@ VS Code also has cool features:
 Your Turn :computer: :
 
 :::{.callout-tip}
-# Markdown exercise (5-7 minutes)
+# Markdown exercise
 
 - Check out [Quarto's markdown guide](https://quarto.org/docs/authoring/markdown-basics.html)
 
@@ -303,7 +308,7 @@ Inline code execution can be helpful referencing values in text like: there are 
 Your Turn :computer: :
 
 :::{.callout-tip}
-# Code block exercise (5-7 minutes)
+# Code block exercise
 
 - Check out the [execution options](https://quarto.org/docs/computations/execution-options.html) and edit the existing code block options in the 'Libraries section' to:
 
@@ -348,7 +353,7 @@ Ok now the feature I find *very* useful: tabsets. Tabsets are great for showing,
 # Code
 ```{r tabsetPlot}
 #| echo: true
-install.packages("pacman", repos="http://cran.r-project.org") # Install pacman package
+if (!require("pacman")) install.packages("pacman", repos="http://cran.r-project.org")
 pacman::p_load(ggplot2, palmerpenguins)    # Install & load packages
 # From: https://allisonhorst.github.io/palmerpenguins/articles/examples.html
 mass_flipper <- ggplot(data = penguins,
@@ -403,7 +408,7 @@ content
 ```
 
 :::{.callout-tip}
-# Tabset exercise (3-4 minutes)
+# Tabset exercise
 
 - Check out the [tabset panel documentation](https://quarto.org/docs/interactive/layout.html#tabset-panel)
 
@@ -419,7 +424,7 @@ content
 Figures can be generated directly from code as in the tabset panel demonstration or inserted as files using the `![caption](pathway/to/img)` syntax (for more details like multi-figure layot and alt text see: [figures in Quarto](https://quarto.org/docs/authoring/figures)).
 
 :::{.callout-tip}
-# Images exercise (3 minutes)
+# Images exercise
 
 - There is a (royalty free) XKCD comic inside the images directory in the repo. using the syntax described above, insert the image into one of the tabsets you just created.
 
