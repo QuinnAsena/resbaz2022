@@ -4,7 +4,7 @@ Learn how to develop reproducible and sharable workflows using Quarto and Git. W
 
 ## Requirements
 
-The session is designed to be easy to follow; however, is targeted at people already familiar with basic coding, code editing software, and version control. We will be using R as an example but Python, R, Julia, and Observable JavaScript are the primary languages Quarto support. R-specific experience is not required.
+The session is designed to be easy to follow; however, it is targeted toards people already familiar with basic coding, code editing software, and version control. We will be using R as an example but Python, R, Julia, and Observable JavaScript are the primary languages Quarto support. R-specific experience is not required.
 
 Before the session install:
 
