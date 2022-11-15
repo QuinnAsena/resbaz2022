@@ -32,12 +32,6 @@ title-slide-attributes:
 
 - [But is it taking over?](https://yihui.org/en/2022/04/quarto-r-markdown/)
 
-#### How does it work? Commandline vs code editor:
-
-- Quarto is commandline, and VS Code and RStudio are editors
-
-![[Quarto uses knitr for R and Jupyter for Python](https://yihui.org/en/2022/04/quarto-r-markdown/)](https://quarto.org/docs/get-started/hello/images/rstudio-qmd-how-it-works.png)
-
 ## why I like Quarto
 
 - [Well documented](https://quarto.org/docs/guide/)
@@ -46,7 +40,7 @@ title-slide-attributes:
 
 - Accepts multiple programming languages
 
-- Outputs multiple formats (Word, PDF HTML...)
+- Outputs multiple formats (Word, PDF, HTML...)
 
 - Easy to learn and transfer skills from other languages
 
@@ -81,6 +75,14 @@ title-slide-attributes:
 - Coding colaborators can contribute via a Git workflow
 
 - Communicate results to non-coding collaborators
+
+
+## How does it work? Commandline vs code editor:
+
+- Quarto is commandline, and VS Code and RStudio are editors
+
+![[Quarto uses knitr for R and Jupyter for Python](https://yihui.org/en/2022/04/quarto-r-markdown/)](https://quarto.org/docs/get-started/hello/images/rstudio-qmd-how-it-works.png)
+
 
 # Buckle up, ready your coding fingers!
 
@@ -472,6 +474,18 @@ You're now ready to host your first live link!
 :::
 
 # Congrats you did it (ง ͡❛ ͜ʖ ͡❛)ง
+
+## how did I do?
+
+Before you go! Please post in the chat:
+
+- a one up (a good thing)
+
+- and one down (a bad thing)
+
+or email me at qasena@wisc.edu
+
+
 
 ## References
 
