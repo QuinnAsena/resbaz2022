@@ -15,7 +15,7 @@ theme:
 ---
 
 :::{.callout-tip}
-# YAML exersice
+# YAML exercise
 - Fill the `title: ` and `name: ` and `affiliation: ` fieds.
 
   - a couple of handy entries are already completed
@@ -44,11 +44,11 @@ In the template Introduction section take 3-4 minutes to write:
 
 - a list
 
-- and an equation
+- and an equation (inline or as a block)
 
 - cite one of the articles in in existing `.bib` file using the `@`
 
-- remove this callout  and render the document and hit the :heavy_check_mark: in zoom
+- remove this callout and render the document and hit the :heavy_check_mark: in zoom
 :::
 
 # Libraries {.unnumbered .unlisted}

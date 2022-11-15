@@ -114,6 +114,14 @@ I sometimes keep a project to-do list here
 
 This workshop is primarily designed to introduce you to tools and useful features in Quarto. Regardless of your workflow (which this template may not fit!), hopefully you will have the tools to make sharing results and colaborating with supervisors and researchers much easier.
 
+# Useful links
+
+[Biostats](https://biostats-r.github.io/biostats/quarto/) - very useful resource for authoring documents in Quarto.
+
+[Awsome Quarto](https://github.com/mcanouil/awesome-quarto) - a big list of Quarto things.
+
+[Generating a DOI using Zenodo](https://docs.github.com/en/repositories/archiving-a-github-repository/referencing-and-citing-content)
+
 # References
 
 References will appear here!

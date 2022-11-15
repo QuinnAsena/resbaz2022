@@ -28,9 +28,15 @@ title-slide-attributes:
 
 - [This is why!](https://quinnasena.github.io/resbaz2022/template_complete.html)
 
-- [and this](https://www.apreshill.com/blog/2022-04-we-dont-talk-about-quarto/)
+- [And this](https://www.apreshill.com/blog/2022-04-we-dont-talk-about-quarto/)
 
 - [But is it taking over?](https://yihui.org/en/2022/04/quarto-r-markdown/)
+
+#### How does it work? Commandline vs code editor:
+
+- Quarto is commandline, and VS Code and RStudio are editors
+
+![[Quarto uses knitr for R and Jupyter for Python](https://yihui.org/en/2022/04/quarto-r-markdown/)](https://quarto.org/docs/get-started/hello/images/rstudio-qmd-how-it-works.png)
 
 ## why I like Quarto
 
@@ -47,20 +53,26 @@ title-slide-attributes:
 
 ## another thing to learn?
 ::::{.columns}
+
 :::{.column width="40%"}
 - R Markdown and Jupyter also support multiple languages too...
 
 - You decide ʕ•́ᴥ•̀ʔっ
+
+- *What you learn here is generalisable!*
 :::
 
 :::{.column width="60%"}
 ![XKCD nails it again!](./images/standards_2x.png)
 :::
+
 ::::
 
 ## why collaborate via Quarto and Git?
 
 - Version control your projects
+
+- [Generate a citable DOI](https://docs.github.com/en/repositories/archiving-a-github-repository/referencing-and-citing-content) and use for supplimentary information 
 
 - Reproducibility: whole workflow from data to results in one place
 
@@ -102,6 +114,8 @@ title-slide-attributes:
 
 - Open up the install.R and template.qmd files
 
+  - Run the install file, then render the template
+
 :::{.callout-note}
 We are using VS Code, R, and GitHub. If you have a preferred workflow like RStudio, Python, or GitKraken you can use them but may be harder to follow the session content. Afterall, Quarto is supposed to be flexible!
 :::
@@ -123,6 +137,7 @@ We are using VS Code, R, and GitHub. If you have a preferred workflow like RStud
 ## YAML
 
 ::::{.columns}
+
 :::{.column width="50%"}
 The YAML is a set of `key: value pairs` that are the metadata for your document, such as, author, title, output format, and citation file.
 
@@ -140,6 +155,7 @@ date: today
 ---
 ```
 :::
+
 ::::
 
 ## YAML exercise
@@ -347,7 +363,7 @@ Refil on tea, coffee, and cookies.
 
 ## tabsets {.scrollable}
 
-Ok now the feature I find *very* useful: tabsets. Tabsets are great for showing, multiple results, data, code, whatever you want in tabs. Say you want to show the plot on one tab and the model output table in the next, or multiple related plots. Much easier to read and flick among results than a long stream of plots and tables.
+Ok now the feature I find *very* useful: tabsets. Tabsets are great for showing, multiple results, data, code, whatever you want in tabs. Say, you want to show the plot on one tab and the model output table in the next, or multiple related plots. Much easier to read and flick among results than a long stream of plots and tables.
 
 :::{.panel-tabset}
 # Code
@@ -421,7 +437,7 @@ content
 
 ## images
 
-Figures can be generated directly from code as in the tabset panel demonstration or inserted as files using the `![caption](pathway/to/img)` syntax (for more details like multi-figure layot and alt text see: [figures in Quarto](https://quarto.org/docs/authoring/figures)).
+Figures can be generated directly from code (as in the tabset panel demonstration) or inserted as files using the `![caption](pathway/to/img)` syntax (for more details like multi-figure layot and alt text see: [figures in Quarto](https://quarto.org/docs/authoring/figures)).
 
 :::{.callout-tip}
 # Images exercise
