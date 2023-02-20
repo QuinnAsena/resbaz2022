@@ -66,7 +66,7 @@ If you want to use Python code check out the documentation [here](https://quarto
 
  - exclude the results, messages and warnings
 
- - exclude the code from the HTML output
+ - exclude the code from the HTML output (make sure it still evaluates!)
 
  - render the document and hit the :heavy_check_mark: in zoom
 :::
@@ -98,7 +98,7 @@ pacman::p_load(ggplot2, palmerpenguins)    # Install & load packages
 :::{.callout-tip}
 # Images exercise
 
-- There is a (royalty free) XKCD comic inside the images directory in the repo. using the syntax described above, insert the image into one of the tabsets you just created.
+- There is a (royalty free) XKCD comic inside the images directory in the repo. [Check out the guide](https://quarto.org/docs/authoring/figures.html), and insert the image into one of the tabsets you just created.
 
 - render the document and hit the :heavy_check_mark: in zoom
 :::

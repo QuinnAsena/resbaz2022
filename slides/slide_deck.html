@@ -7,10 +7,9 @@
 <link href="slide_deck_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="slide_deck_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="slide_deck_files/libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.0.38">
+  <meta name="generator" content="quarto-1.2.313">
 
   <meta name="author" content="Quinn Asena">
-  <meta name="dcterms.date" content="2022-11-15">
   <title>Authoring collaborative research projects using Quarto</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -20,10 +19,15 @@
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
     pre > code.sourceCode { white-space: pre; position: relative; }
     pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -405,13 +409,22 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" data-background-color="#1a1e43" class="center">
+<section id="title-slide" data-background-color="#1a1e43" class="quarto-title-block center">
   <h1 class="title">Authoring collaborative research projects using Quarto</h1>
-  <p class="author">Quinn Asena</p>
-  <p class="institute">UW-Madison</p>
-  <p class="date">11/15/22</p>
-</section>
 
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Quinn Asena 
+</div>
+        <p class="quarto-title-affiliation">
+            UW-Madison
+          </p>
+    </div>
+</div>
+
+  <p class="date">2/20/23</p>
+</section>
 <section>
 <section id="quarto-for-collaborative-research" class="title-slide slide level1 center">
 <h1>Quarto for collaborative research</h1>
@@ -635,8 +648,8 @@
 <h2>in-text citations</h2>
 <p>Citing work in-text <a href="https://quarto.org/docs/visual-editor/technical.html#inserting-citations">follows the <code>@citekey</code> format</a></p>
 <ul>
-<li><p><code>@perkel2022</code> = <span class="citation" data-cites="perkel2022">Perkel (<a href="#/ref-perkel2022" role="doc-biblioref" onclick="return false;">2022</a>)</span></p></li>
-<li><p><code>[@chamberlin1897; @perkel2022]</code> = <span class="citation" data-cites="chamberlin1897 perkel2022">(<a href="#/ref-chamberlin1897" role="doc-biblioref" onclick="return false;">Chamberlin 1897</a>; <a href="#/ref-perkel2022" role="doc-biblioref" onclick="return false;">Perkel 2022</a>)</span></p></li>
+<li><p><code>@perkel2022</code> = <span class="citation" data-cites="perkel2022">Perkel (<a href="#/references" role="doc-biblioref" onclick="">2022</a>)</span></p></li>
+<li><p><code>[@chamberlin1897; @perkel2022]</code> = <span class="citation" data-cites="chamberlin1897 perkel2022">(<a href="#/references" role="doc-biblioref" onclick="">Chamberlin 1897</a>; <a href="#/references" role="doc-biblioref" onclick="">Perkel 2022</a>)</span></p></li>
 <li><p>Quarto, by default, inserts a formatted reference list at the end of the document so I put an empty ‘References’ header.</p></li>
 </ul>
 <p>We won’t go deeper into citations for now as we are not authoring an article today. The link above has info for technical writing.</p>
@@ -752,9 +765,8 @@ format:
 <div class="callout-content">
 <ul>
 <li><p>Check out the <a href="https://quarto.org/docs/computations/execution-options.html">execution options</a> and edit the existing code block options in the ‘Libraries section’ to:</p></li>
-<li><p>display the results</p></li>
-<li><p>exclude the code</p></li>
-<li><p>include a figure caption</p></li>
+<li><p>exclude the results</p></li>
+<li><p>exclude displaying the code (make sure it still evaluates!)</p></li>
 <li><p>render the document and hit the <span class="emoji" data-emoji="heavy_check_mark">✔️</span> in zoom</p></li>
 </ul>
 </div>
@@ -1169,12 +1181,15 @@ Perkel, Jeffrey M. 2022. <span>“Cut the Tyranny of Copy-and-Paste with These C
       // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
       // slide changes (different for each slide format).
       (function () {
-        function fireSlideChanged(previousSlide, currentSlide) {
-
-          // dispatch for htmlwidgets
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
           const event = window.document.createEvent("Event");
           event.initEvent("slideenter", true, true);
           window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
 
           // dispatch for shiny
           if (window.jQuery) {
@@ -1185,13 +1200,6 @@ Perkel, Jeffrey M. 2022. <span>“Cut the Tyranny of Copy-and-Paste with These C
               window.jQuery(currentSlide).trigger("shown");
             }
           }
-        }
-
-        // hookup for reveal
-        if (window.Reveal) {
-          window.Reveal.addEventListener("slidechanged", function(event) {
-            fireSlideChanged(event.previousSlide, event.currentSlide);
-          });
         }
 
         // hookup for slidy
@@ -1243,7 +1251,24 @@ Perkel, Jeffrey M. 2022. <span>“Cut the Tyranny of Copy-and-Paste with These C
         button.classList.add('code-copy-button-checked');
         var currentTitle = button.getAttribute("title");
         button.setAttribute("title", "Copied!");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copied!");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
         setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
           button.setAttribute("title", currentTitle);
           button.classList.remove('code-copy-button-checked');
         }, 1000);
@@ -1273,31 +1298,50 @@ Perkel, Jeffrey M. 2022. <span>“Cut the Tyranny of Copy-and-Paste with These C
       for (var i=0; i<noterefs.length; i++) {
         const ref = noterefs[i];
         tippyHover(ref, function() {
-          let href = ref.getAttribute('href');
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
           try { href = new URL(href).hash; } catch {}
           const id = href.replace(/^#\/?/, "");
           const note = window.document.getElementById(id);
           return note.innerHTML;
         });
       }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
       var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
       for (var i=0; i<bibliorefs.length; i++) {
         const ref = bibliorefs[i];
-        const cites = ref.parentNode.getAttribute('data-cites').split(' ');
-        tippyHover(ref, function() {
-          var popup = window.document.createElement('div');
-          cites.forEach(function(cite) {
-            var citeDiv = window.document.createElement('div');
-            citeDiv.classList.add('hanging-indent');
-            citeDiv.classList.add('csl-entry');
-            var biblioDiv = window.document.getElementById('ref-' + cite);
-            if (biblioDiv) {
-              citeDiv.innerHTML = biblioDiv.innerHTML;
-            }
-            popup.appendChild(citeDiv);
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
           });
-          return popup.innerHTML;
-        });
+        }
       }
     });
     </script>

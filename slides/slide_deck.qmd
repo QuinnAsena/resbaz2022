@@ -330,11 +330,9 @@ Your Turn :computer: :
 
 - Check out the [execution options](https://quarto.org/docs/computations/execution-options.html) and edit the existing code block options in the 'Libraries section' to:
 
- - display the results
+ - exclude the results
 
- - exclude the code
-
- - include a figure caption
+ - exclude displaying the code (make sure it still evaluates!)
 
  - render the document and hit the :heavy_check_mark: in zoom
 :::
