@@ -5,6 +5,7 @@ author:
   affiliation: "From whence you hail"
 date: today
 bibliography: refs.bib
+from: markdown+emoji
 format:
   html:
     code-fold: false
@@ -104,7 +105,7 @@ pacman::p_load(ggplot2, palmerpenguins)    # Install & load packages
 :::
 
 
-## let'g go Git it
+# let'g go Git it
 
 You're now ready to host your first live link!
 
