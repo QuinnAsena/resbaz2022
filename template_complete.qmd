@@ -122,6 +122,9 @@ This workshop is primarily designed to introduce you to tools and useful feature
 
 [Generating a DOI using Zenodo](https://docs.github.com/en/repositories/archiving-a-github-repository/referencing-and-citing-content)
 
-# References
+### References
 
-References will appear here!
+References will [appear here](https://quarto.org/docs/authoring/citations.html#bibliography-generation)!
+
+::: {#refs}
+:::

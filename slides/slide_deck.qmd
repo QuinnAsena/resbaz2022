@@ -106,9 +106,29 @@ title-slide-attributes:
 
 ## first things first
 
+It sometimes takes a minute for GitHub to host your repo, so let's get this process underway.
+
+:::{.callout-tip}
+# GitHub
+
 - Go to [the session repo](https://github.com/QuinnAsena/resbaz2022)
 
 - Fork the repository 
+
+- Settings -> GitHub pages -> enable github pages
+
+- By default, your link will be hosted at: https://githubusername.github.io/reponame/pathtodocument.html
+
+- The repo can remain private but anyone who has the link can view it.
+
+:::
+
+## Let's code!
+
+We are using VS Code, R, and GitHub. If you have a preferred workflow like RStudio, Python, or GitKraken you can use them but may be harder to follow the session content. Afterall, Quarto is supposed to be flexible!
+
+:::{.callout-tip}
+# GitHub
 
 - Open up VS Code and navigate to the source control
 
@@ -118,9 +138,8 @@ title-slide-attributes:
 
   - Run the install file, then render the template
 
-:::{.callout-note}
-We are using VS Code, R, and GitHub. If you have a preferred workflow like RStudio, Python, or GitKraken you can use them but may be harder to follow the session content. Afterall, Quarto is supposed to be flexible!
 :::
+
 
 ## elements of a Quarto file
 
@@ -144,8 +163,8 @@ We are using VS Code, R, and GitHub. If you have a preferred workflow like RStud
 The YAML is a set of `key: value pairs` that are the metadata for your document, such as, author, title, output format, and citation file.
 
 - YAML is whitespace sensitive
-
 - Indent sensitive
+- Can be a separate file named `_quarto.yml`
 :::
 
 :::{.column width="50%"}
@@ -449,7 +468,7 @@ Figures can be generated directly from code (as in the tabset panel demonstratio
 
 ## let'g go Git it
 
-You're now ready to host your first live link!
+You're now ready to host your live link!
 
 :::{.callout-tip}
 # GitHub
@@ -460,15 +479,8 @@ You're now ready to host your first live link!
  
   - You can do this however you prefer, commandline, GUI, source control...
 
-- Head over to GitHub in your browser and go:
-
-  - Settings -> GitHub pages -> enable github pages
-
-- By default, your link will be hosted at: https://githubusername.github.io/reponame/pathtodocument.html
-
-  - The repo can remain private but anyone who has the link can view it.
-
 - Find your hosted template link and share with the world!
+
 :::
 
 # Congrats you did it (ง ͡❛ ͜ʖ ͡❛)ง
