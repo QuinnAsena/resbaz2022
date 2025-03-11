@@ -9,6 +9,8 @@ format:
     code-fold: false
     toc: true
     link-external-newwindow: true
+execute: 
+  cache: true
 theme:
   light: flatly
   dark: darkly
@@ -62,7 +64,7 @@ I'm here in spirit, code will still be executed.
 
 # Data wrangling
 
-Typically you need to do some tidying of your data. Each project will have different reqirements e.g., transforming data or generating new datasets. You probably want to dedicate a section just for wrangling but may want to hide it from the output. See [R for Data Science](https://r4ds.had.co.nz/introduction.html) for more info.
+Typically you need to do some tidying of your data. Each project will have different reqirements e.g., transforming data or generating new datasets. You probably want to dedicate a section just for wrangling but may want to hide it from the output. See [R for Data Science](https://r4ds.had.co.nz/introduction.html) for more info. You may prefer to have seperate scripts in a dedicated /R directory for processing dta and generating outputs.
 
 
 # Visualisations {.tabset}
@@ -73,7 +75,7 @@ Sometimes I have a lot of plots (like, a lot!). Perhaps generated from a loop th
 # A list of plots:
 plot_list <- penguins |>
   split(penguins$species) |>
-  lapply(function(x){
+  lapply(\(x){
     ggplot(x, aes(x = flipper_length_mm, y = body_mass_g)) + 
       geom_point() +
       theme_minimal()
