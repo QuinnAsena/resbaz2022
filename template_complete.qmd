@@ -50,7 +50,8 @@ It is good practice to include a list of packages used as well as any source fil
 
 You might also include sourcing any function scripts (e.g., `source("my_functions.R")`).
 
-```{r Libraries}
+```{r}
+#| title: Libraries
 #| include: false
 if (!require("pacman")) install.packages("pacman", repos="http://cran.r-project.org")
 pacman::p_load(ggplot2, palmerpenguins)    # Install & load packages
@@ -90,8 +91,9 @@ headings <- names(plot_list)
 The code might be a little complicated but useful to reduce the length and manual work if you have a lot of outputs.
 
 :::{.panel-tabset}
-```{r, results='asis'}
+```{r}
 #| warning: false
+#| results: asis
 
 # Use a loop (or lapply, or map, you choose) to generate the headings and insert plots
 for (i in seq_along(plot_list)) {

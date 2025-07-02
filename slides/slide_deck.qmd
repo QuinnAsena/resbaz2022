@@ -119,7 +119,7 @@ It sometimes takes a minute for GitHub to host your repo, so let's get this proc
 
 - By default, your link will be hosted at: https://githubusername.github.io/reponame/pathtodocument.html
 
-- The repo can remain private but anyone who has the link can view it.
+- The repo can remain private if you have GitHub Pro (available to UoA students) but _anyone_ who has the link can view it.
 
 :::
 
@@ -386,7 +386,8 @@ Ok now the feature I find *very* useful: tabsets. Tabsets are great for showing,
 
 :::{.panel-tabset}
 # Code
-```{r tabsetPlot}
+```{r}
+#| title: tabsetCode
 #| echo: true
 if (!require("pacman")) install.packages("pacman", repos="http://cran.r-project.org")
 pacman::p_load(ggplot2, palmerpenguins)    # Install & load packages
@@ -411,11 +412,13 @@ mass_flipper <- ggplot(data = penguins,
 
 # Data
 ```{r}
+#| title: tabsetData
 rmarkdown::paged_table(penguins[1:50,])
 ```
 
 # Plot
 ```{r}
+#| title: tabsetPlot
 #| warning: false
 #| fig-cap: Flipper length and body mass for Adelie, Chinstrap and Gentoo Penguins from [Allison Horst](https://allisonhorst.github.io/palmerpenguins/articles/examples.html)
 #| fig-alt: Plot of penguin bill length against body mass by species

@@ -25,7 +25,7 @@ theme:
 
 - Add a table of contents following the [guide](https://quarto.org/docs/output-formats/html-basics.html)
 
-- Remove this callout block and render the document
+- Render the document
 
 - Give me a :heavy_check_mark: when done or a :hand: if you need help
 :::
@@ -39,7 +39,7 @@ theme:
 
 - and the [biostats guide to writing (equations section)](https://biostats-r.github.io/biostats/quarto/04-figures-tables.html#equations)
 
-In the template Introduction section take 3-4 minutes to write:
+- In the template Introduction section take 3-4 minutes to write:
 
 - a sub-heading under the introduction
 
@@ -49,7 +49,7 @@ In the template Introduction section take 3-4 minutes to write:
 
 - cite one of the articles in in existing `.bib` file using the `@`
 
-- remove this callout and render the document and hit the :heavy_check_mark: in zoom
+- render the document and hit the :heavy_check_mark: in zoom
 :::
 
 # Libraries {.unnumbered .unlisted}
@@ -73,7 +73,8 @@ If you want to use Python code check out the documentation [here](https://quarto
 :::
 
 
-```{r Libraries}
+```{r}
+#| label: Libraries
 #| include: true
 
 if (!require("pacman")) install.packages("pacman", repos="http://cran.r-project.org")
